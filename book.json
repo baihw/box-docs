@@ -1,0 +1,36 @@
+{
+  "author": "baihw",
+  "title": "Box参考手册",
+  "description": "Box参考手册。",
+  "language": "zh-hans",
+  "links" : {
+    "sidebar" : {
+        "box-doc" : "http://doc.box.wee0.com"
+    }
+  },
+   "styles": {
+    "website": "styles/website.css",
+    "ebook": "styles/ebook.css",
+    "pdf": "styles/pdf.css",
+    "mobi": "styles/mobi.css",
+    "epub": "styles/epub.css"
+  },
+  "plugins": [
+    "splitter",
+    "expandable-chapters",
+    "-prism",
+    "-livereload",
+    "-fontsettings",
+    "-include-display-run",
+    "-tbfed-pagefooter",
+    "-ace",
+    "-include-codeblock",
+    "-highlight",
+    "-mermaid",    
+    "-katex",
+    "-lunr",    
+    "-search",
+    "-search-pro",
+    "-sharing"
+  ]
+}

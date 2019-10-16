@@ -1,0 +1,363 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>配置文件 · Box参考手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="baihw">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dao.html" />
+    
+    
+    <link rel="prev" href="guide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://doc.box.wee0.com" target="_blank" class="custom-link">box-doc</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../quickStart.html">
+            
+                <a href="../quickStart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../specification.html">
+            
+                <a href="../specification.html">
+            
+                    
+                    规范约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="guide.html">
+            
+                <a href="guide.html">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="dao.html">
+            
+                <a href="dao.html">
+            
+                    
+                    数据访问层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="controller.html">
+            
+                <a href="controller.html">
+            
+                    
+                    路由控制层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="subject.html">
+            
+                <a href="subject.html">
+            
+                    
+                    认证鉴权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="code.html">
+            
+                <a href="code.html">
+            
+                    
+                    业务编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="cache.html">
+            
+                <a href="cache.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >配置文件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6846;&#x67B6;&#x914D;&#x7F6E;">&#x6846;&#x67B6;&#x914D;&#x7F6E;</h1>
+<p>&#x6846;&#x67B6;&#x914D;&#x7F6E;&#x6027;&#x7684;&#x6587;&#x672C;&#x7EDF;&#x4E00;&#x653E;&#x7F6E;&#x5728;web&#x9879;&#x76EE;&#x7684;<em>src/main/resources</em>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4E3B;&#x8981;&#x76EE;&#x5F55;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>application.properties - springboot&#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>application-dev.properties - springboot&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>application-prod.properties - springboot&#x6B63;&#x5F0F;&#x73AF;&#x5883;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>config - &#x4E0D;&#x4F9D;&#x8D56;springboot&#x73AF;&#x5883;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x76EE;&#x5F55;<ul>
+<li>box_config.properties - &#x6846;&#x67B6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>redis.properties - redis&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x53EF;&#x9009;&#xFF09;</li>
+<li>shiro.ini - shiro&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x53EF;&#x9009;&#xFF09;</li>
+</ul>
+</li>
+<li>mybatis - mybatis&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x76EE;&#x5F55;&#xFF08;&#x53EF;&#x9009;&#xFF09;<ul>
+<li>mybatis-config.xml - mybatis&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>mapper - mapper xml &#x6587;&#x4EF6;&#x5B58;&#x653E;&#x76EE;&#x5F55;</li>
+</ul>
+</li>
+<li>static - &#x9759;&#x6001;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x76EE;&#x5F55;&#xFF08;&#x53EF;&#x9009;&#xFF09;</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="guide.html" class="navigation navigation-prev " aria-label="Previous page: 开发指南">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dao.html" class="navigation navigation-next " aria-label="Next page: 数据访问层">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"配置文件","level":"1.4.1","depth":2,"next":{"title":"数据访问层","level":"1.4.2","depth":2,"path":"src/guide/dao.md","ref":"src/guide/dao.md","articles":[]},"previous":{"title":"开发指南","level":"1.4","depth":1,"path":"src/guide/guide.md","ref":"src/guide/guide.md","articles":[{"title":"配置文件","level":"1.4.1","depth":2,"path":"src/guide/config.md","ref":"src/guide/config.md","articles":[]},{"title":"数据访问层","level":"1.4.2","depth":2,"path":"src/guide/dao.md","ref":"src/guide/dao.md","articles":[]},{"title":"路由控制层","level":"1.4.3","depth":2,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},{"title":"认证鉴权","level":"1.4.4","depth":2,"path":"src/guide/subject.md","ref":"src/guide/subject.md","articles":[]},{"title":"业务编码","level":"1.4.5","depth":2,"path":"src/guide/code.md","ref":"src/guide/code.md","articles":[]},{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},{"title":"缓存","level":"1.4.7","depth":2,"path":"src/guide/cache.md","ref":"src/guide/cache.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-highlight","-mermaid","-katex","-lunr","-search","-search-pro","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/config.md","mtime":"2019-10-16T14:00:13.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T14:40:36.869Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+
+    </body>
+</html>
+

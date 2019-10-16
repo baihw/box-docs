@@ -1,0 +1,384 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>规范约定 · Box参考手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="baihw">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="guide/guide.html" />
+    
+    
+    <link rel="prev" href="quickStart.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://doc.box.wee0.com" target="_blank" class="custom-link">box-doc</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="quickStart.html">
+            
+                <a href="quickStart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="specification.html">
+            
+                <a href="specification.html">
+            
+                    
+                    规范约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="guide/guide.html">
+            
+                <a href="guide/guide.html">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="guide/config.html">
+            
+                <a href="guide/config.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="guide/dao.html">
+            
+                <a href="guide/dao.html">
+            
+                    
+                    数据访问层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="guide/controller.html">
+            
+                <a href="guide/controller.html">
+            
+                    
+                    路由控制层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="guide/subject.html">
+            
+                <a href="guide/subject.html">
+            
+                    
+                    认证鉴权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="guide/code.html">
+            
+                <a href="guide/code.html">
+            
+                    
+                    业务编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="guide/log.html">
+            
+                <a href="guide/log.html">
+            
+                    
+                    日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="guide/cache.html">
+            
+                <a href="guide/cache.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="faq/faq.html">
+            
+                <a href="faq/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >规范约定</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x89C4;&#x8303;&#x7EA6;&#x5B9A;">&#x89C4;&#x8303;&#x7EA6;&#x5B9A;</h1>
+<p>&#x4F7F;&#x7528;&#x7EDF;&#x4E00;&#x7684;&#x89C4;&#x8303;&#xFF0C;&#x4FBF;&#x4E8E;&#x7EDF;&#x4E00;&#x5927;&#x5BB6;&#x7684;&#x601D;&#x60F3;&#x8BA4;&#x77E5;&#xFF0C;&#x964D;&#x4F4E;&#x51FA;&#x9519;&#x7684;&#x6982;&#x7387;&#xFF1B;&#x4E0D;&#x8981;&#x7B49;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x4E86;&#x624D;&#x60F3;&#x5230;&#x89E3;&#x51B3;&#xFF0C;&#x800C;&#x662F;&#x51C6;&#x5907;&#x597D;&#x4E86;&#xFF0C;&#x624D;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x6709;&#x89C4;&#x8303;&#x4E00;&#x5B9A;&#x4F1A;&#x4EA7;&#x751F;&#x5236;&#x7EA6;&#xFF0C;&#x867D;&#x7136;&#x89C4;&#x8303;&#x5236;&#x5B9A;&#x65F6;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x7684;&#x517C;&#x5BB9;&#x5927;&#x5BB6;&#x7684;&#x5F00;&#x53D1;&#x4E60;&#x60EF;&#xFF0C;&#x4EE5;&#x964D;&#x4F4E;&#x5927;&#x5BB6;&#x7684;&#x4E0D;&#x9002;&#x5E94;&#x7A0B;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x4F17;&#x53E3;&#x96BE;&#x8C03;&#xFF0C;&#x96BE;&#x514D;&#x6709;&#x4E00;&#x4E9B;&#x5730;&#x65B9;&#x4F1A;&#x8DDF;&#x4E00;&#x90E8;&#x5206;&#x4EBA;&#x7684;&#x4E60;&#x60EF;&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#x3002;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x7EDD;&#x5BF9;&#x7684;&#x5BF9;&#x9519;&#xFF0C;&#x9002;&#x5F53;&#x7684;&#x89C4;&#x8303;&#x548C;&#x6807;&#x51C6;&#x7EDD;&#x4E0D;&#x662F;&#x6D88;&#x706D;&#x4EE3;&#x7801;&#x5185;&#x5BB9;&#x7684;&#x521B;&#x9020;&#x6027;&#xFF0C;&#x800C;&#x662F;&#x9650;&#x5236;&#x8FC7;&#x5EA6;&#x4E2A;&#x6027;&#x5316;&#xFF0C;&#x4EE5;&#x4E00;&#x79CD;&#x666E;&#x904D;&#x8BA4;&#x53EF;&#x7684;&#x7EDF;&#x4E00;&#x65B9;&#x5F0F;&#x964D;&#x4F4E;&#x534F;&#x540C;&#x6210;&#x672C;&#xFF0C;&#x63D0;&#x5347;&#x534F;&#x4F5C;&#x6C9F;&#x901A;&#x6548;&#x7387;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x843D;&#x5B9E;">&#x5982;&#x4F55;&#x843D;&#x5B9E;</h2>
+<p>&#x524D;&#x671F;&#x9664;&#x4E86;&#x4E00;&#x4E9B;&#x56FA;&#x5316;&#x5728;&#x6846;&#x67B6;&#x91CC;&#x7684;&#x89C4;&#x8303;&#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x89C4;&#x8303;&#x4E3B;&#x8981;&#x8FD8;&#x662F;&#x9760;&#x5927;&#x5BB6;&#x81EA;&#x89C9;&#x6267;&#x884C;&#xFF0C;&#x4EE5;&#x53CA;&#x901A;&#x8FC7;&#x9002;&#x5F53;&#x7684;&#x4EE3;&#x7801;&#x8D70;&#x67E5;&#x6765;&#x4FDD;&#x8BC1;&#x3002;&#x540E;&#x671F;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x6765;&#x4FDD;&#x969C;&#x89C4;&#x8303;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x6BD4;&#x5982;&#x96C6;&#x6210;&#x5728;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x7BA1;&#x7406;&#x6D41;&#x7A0B;&#x4E2D;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x68C0;&#x67E5;&#x7B49;&#x3002;</p>
+<h2 id="box-api&#xFF08;&#x56FA;&#x5316;&#x5728;&#x6846;&#x67B6;&#x91CC;&#x7684;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x7684;&#x89C4;&#x8303;&#xFF09;">box-api&#xFF08;&#x56FA;&#x5316;&#x5728;&#x6846;&#x67B6;&#x91CC;&#x7684;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x7684;&#x89C4;&#x8303;&#xFF09;</h2>
+<p>box-api&#x9879;&#x76EE;&#x91CC;&#x8FB9;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x63A5;&#x53E3;&#xFF0C;&#x548C;&#x5C11;&#x91CF;&#x7684;&#x4E00;&#x4E9B;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5FEB;&#x6377;&#x64CD;&#x4F5C;&#x7C7B;&#x3002;</p>
+<p>box-impl&#x9879;&#x76EE;&#x662F;&#x5F53;&#x524D;&#x57FA;&#x4E8E;spring&#x6846;&#x67B6;&#x5C01;&#x88C5;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x3002;</p>
+<p>box-springboot&#x9879;&#x76EE;&#x662F;&#x589E;&#x52A0;&#x4E86;springboot&#x73AF;&#x5883;&#x4F9D;&#x8D56;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6709;&#x5174;&#x8DA3;&#x4E5F;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x5FC5;&#x987B;&#x63D0;&#x4F9B;box-api&#x7684;&#x7EDD;&#x5BF9;&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x5373;&#x57FA;&#x4E8E;box-api&#x5F00;&#x53D1;&#x7684;&#x9879;&#x76EE;&#x5E94;&#x8BE5;&#x5728;&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x4FEE;&#x6539;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x80FD;&#x7A33;&#x5B9A;&#x8FD0;&#x884C;&#x4E8E;&#x4F60;&#x7684;&#x53D1;&#x884C;&#x7248;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x63A5;&#x4E0B;&#x6765;&#x5F53;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7279;&#x5B9A;&#x529F;&#x80FD;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x5C1D;&#x8BD5;&#x7740;&#x53BB;&#x57FA;&#x4E8E;api&#x6765;&#x601D;&#x8003;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x57FA;&#x4E8E;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x884C;&#x4E3A;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x51B3;&#x5B9A;&#x4E86;&#x529F;&#x80FD;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0E;&#x4F7F;&#x7528;&#x89C4;&#x8303;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x5728;&#x9700;&#x8981;&#x7F13;&#x5B58;&#x529F;&#x80FD;&#x65F6;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x7684;&#x5E94;&#x8BE5;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x60F3;&#x8981;&#x8FBE;&#x5230;&#x7684;&#x6548;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x57FA;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x6C42;&#x6765;&#x62BD;&#x8C61;&#x63A5;&#x53E3;&#x884C;&#x4E3A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5177;&#x4F53;&#x7684;redis&#x6216;&#x8005;ehcache&#x7EC4;&#x4EF6;&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#x6837;&#x7684;API&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x6765;&#x51B3;&#x5B9A;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;&#x4E0A;&#x7684;&#x89C4;&#x8303;&#x3002;</p>
+<p>box-api&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x7EC4;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x66FF;&#x6362;&#xFF0C;&#x5982;&#x679C;api&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x7EC4;&#x4EF6;&#x65E0;&#x8BBA;&#x662F;&#x6027;&#x80FD;&#x8FD8;&#x662F;&#x7ED3;&#x679C;&#x7B49;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x65B9;&#x9762;&#x8FBE;&#x4E0D;&#x5230;&#x671F;&#x671B;&#x7684;&#x76EE;&#x6807;&#x503C;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x5F88;&#x8F7B;&#x677E;&#x7684;&#x81EA;&#x884C;&#x66FF;&#x6362;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5FC5;&#x987B;&#x7B49;&#x5F85;&#x6846;&#x67B6;&#x7684;&#x7248;&#x672C;&#x53D1;&#x5E03;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x5427;&#xFF0C;&#x5982;&#x679C;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x73B0;&#x4E86;StringUtils&#x5DE5;&#x5177;&#x7684;&#x884C;&#x4E3A;&#x5728;&#x7279;&#x5B9A;&#x73AF;&#x5883;&#x4E0B;&#x4E0E;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x800C;&#x4E14;&#x65F6;&#x95F4;&#x53C8;&#x5F88;&#x7D27;&#x8FEB;&#xFF0C;&#x8D70;&#x6846;&#x67B6;&#x66F4;&#x65B0;&#x6D41;&#x7A0B;&#x6765;&#x4E0D;&#x53CA;&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x5728;&#x6846;&#x67B6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;StringUtils&#x5DE5;&#x5177;&#x5207;&#x6362;&#x5230;&#x9879;&#x76EE;&#x7EC4;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x81EA;&#x884C;&#x638C;&#x63A7;&#x95EE;&#x9898;&#x5904;&#x7406;&#x8FDB;&#x5EA6;&#x3002;&#x6709;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x540E;&#x518D;&#x63D0;&#x4EA4;&#x76F8;&#x5173;&#x95EE;&#x9898;&#x5230;&#x6846;&#x67B6;&#x7EC4;&#xFF0C;&#x5F85;&#x6846;&#x67B6;&#x66F4;&#x65B0;&#x53D1;&#x5E03;&#x540E;&#xFF0C;&#x5728;&#x4E0B;&#x6B21;&#x5347;&#x7EA7;&#x65F6;&#x79FB;&#x9664;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x9879;&#x5373;&#x53EF;&#xFF0C;&#x4EE5;&#x6B64;&#x8FBE;&#x5230;&#x6846;&#x67B6;&#x7EC4;&#x4E0E;&#x4EA7;&#x54C1;&#x7EC4;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x79CD;&#x9AD8;&#x6548;&#x534F;&#x4F5C;&#x65B9;&#x6848;&#x3002;</p>
+<h2 id="&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;">&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;</h2>
+<h3 id="&#x6846;&#x67B6;&#x6CE8;&#x89E3;&#x7C7B;">&#x6846;&#x67B6;&#x6CE8;&#x89E3;&#x7C7B;</h3>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5927;&#x5BB6;&#x8BB0;&#x5FC6;&#xFF0C;&#x6846;&#x67B6;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x6CE8;&#x89E3;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x6709;box&#x524D;&#x7F00;&#xFF0C;&#x5982;BoxDao&#xFF0C;BoxAction&#xFF0C;...</p>
+<h3 id="&#x9879;&#x76EE;&#x5305;">&#x9879;&#x76EE;&#x5305;</h3>
+<p>&#x5EFA;&#x8BAE;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x89C4;&#x8303;&#x597D;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x5305;&#x540D;&#xFF0C;&#x5C06;&#x9879;&#x76EE;&#x542F;&#x52A8;&#x7C7B;&#x653E;&#x7F6E;&#x4E8E;&#x9879;&#x76EE;&#x5305;&#x540D;&#x4E0B;&#xFF0C;&#x9075;&#x5B88;&#x6B64;&#x7EA6;&#x5B9A;&#xFF0C;&#x53EF;&#x514D;&#x4E8E;&#x914D;&#x7F6E;dao&#x5305;&#x76EE;&#x5F55;&#xFF0C;action&#x5305;&#x76EE;&#x5F55;&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x4F8B;&#x5982;&#x9879;&#x76EE;&#x5305;&#x540D;&#x4E3A;&#x201C;com.test.project1&#x201D;&#xFF0C;&#x5219;&#x7EA6;&#x5B9A;&#x90E8;&#x5206;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>com.test.project1.App.java - &#x9879;&#x76EE;&#x542F;&#x52A8;&#x7C7B;</li>
+<li>com.test.project1.action - action&#x5305;</li>
+<li>com.test.project1.entity - entity&#x5305;</li>
+<li>com.test.project1.dao - dao&#x5305;</li>
+</ul>
+<h3 id="&#x5206;&#x6A21;&#x5757;">&#x5206;&#x6A21;&#x5757;</h3>
+<p>&#x5206;&#x6A21;&#x5757;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x6A21;&#x5757;&#x5E94;&#x8BE5;&#x5F52;&#x5728;&#x9879;&#x76EE;&#x5305;&#x4E0B;&#xFF0C;&#x4F8B;&#x5982;&#x9879;&#x76EE;&#x5305;&#x540D;&#x4E3A;&#x201C;com.test.project1&#x201D;&#xFF0C;&#x6A21;&#x5757;1&#x4E3A;module1&#xFF0C;&#x6A21;&#x5757;2&#x4E3A;module2&#xFF0C;&#x5219;&#x7EA6;&#x5B9A;&#x90E8;&#x5206;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>com.test.project1.module1 - &#x6A21;&#x5757;1&#x5305;&#x540D;</li>
+<li>com.test.project1.module2 - &#x6A21;&#x5757;2&#x5305;&#x540D;</li>
+</ul>
+<p>&#x6A21;&#x5757;&#x5DE5;&#x7A0B;&#x5212;&#x5206;&#x4E3A;&#xFF1A;api&#xFF08;&#x6A21;&#x5757;&#x63A5;&#x53E3;&#xFF09;&#xFF0C;impl&#xFF08;&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#xFF09;&#xFF0C;route&#xFF08;&#x9879;&#x76EE;&#x8DEF;&#x7531;&#xFF09;&#xFF0C;web&#xFF08;web&#x73AF;&#x5883;&#x542F;&#x52A8;&#x9879;&#x76EE;&#xFF09;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>module1-api </li>
+<li>module1-impl</li>
+<li>module2-api</li>
+<li>module2-impl</li>
+<li>project1-route</li>
+<li>project1-web</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="quickStart.html" class="navigation navigation-prev " aria-label="Previous page: 快速开始">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="guide/guide.html" class="navigation navigation-next " aria-label="Next page: 开发指南">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"规范约定","level":"1.3","depth":1,"next":{"title":"开发指南","level":"1.4","depth":1,"path":"src/guide/guide.md","ref":"src/guide/guide.md","articles":[{"title":"配置文件","level":"1.4.1","depth":2,"path":"src/guide/config.md","ref":"src/guide/config.md","articles":[]},{"title":"数据访问层","level":"1.4.2","depth":2,"path":"src/guide/dao.md","ref":"src/guide/dao.md","articles":[]},{"title":"路由控制层","level":"1.4.3","depth":2,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},{"title":"认证鉴权","level":"1.4.4","depth":2,"path":"src/guide/subject.md","ref":"src/guide/subject.md","articles":[]},{"title":"业务编码","level":"1.4.5","depth":2,"path":"src/guide/code.md","ref":"src/guide/code.md","articles":[]},{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},{"title":"缓存","level":"1.4.7","depth":2,"path":"src/guide/cache.md","ref":"src/guide/cache.md","articles":[]}]},"previous":{"title":"快速开始","level":"1.2","depth":1,"path":"src/quickStart.md","ref":"src/quickStart.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-highlight","-mermaid","-katex","-lunr","-search","-search-pro","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/specification.md","mtime":"2019-10-16T08:53:11.857Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T14:40:36.869Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+
+    </body>
+</html>
+

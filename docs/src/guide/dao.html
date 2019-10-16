@@ -1,0 +1,530 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>数据访问层 · Box参考手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="baihw">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="controller.html" />
+    
+    
+    <link rel="prev" href="config.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://doc.box.wee0.com" target="_blank" class="custom-link">box-doc</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../quickStart.html">
+            
+                <a href="../quickStart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../specification.html">
+            
+                <a href="../specification.html">
+            
+                    
+                    规范约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="guide.html">
+            
+                <a href="guide.html">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="dao.html">
+            
+                <a href="dao.html">
+            
+                    
+                    数据访问层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="controller.html">
+            
+                <a href="controller.html">
+            
+                    
+                    路由控制层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="subject.html">
+            
+                <a href="subject.html">
+            
+                    
+                    认证鉴权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="code.html">
+            
+                <a href="code.html">
+            
+                    
+                    业务编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="cache.html">
+            
+                <a href="cache.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >数据访问层</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;">&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;</h1>
+<p>&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;&#x5F53;&#x524D;&#x7248;&#x672C;&#x4EC5;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x4E8E;mybatis&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x5355;&#x8868;&#x589E;&#x3001;&#x5220;&#x3001;&#x6539;&#x3001;&#x67E5;&#x529F;&#x80FD;&#x7684;&#x81EA;&#x52A8;&#x9002;&#x914D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7EE7;&#x627F;IBaseDao&#x5373;&#x53EF;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5199;mapper.xml&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x81EA;&#x52A8;&#x9002;&#x914D;&#x7684;&#x7ED3;&#x679C;&#x4E0E;&#x9884;&#x671F;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x663E;&#x5F0F;&#x7684;&#x5728;mapper.xml&#x6587;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#x8986;&#x76D6;&#x3002;&#x5F53;mapper.xml&#x4E2D;&#x5B58;&#x5728;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#x7684;&#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x65F6;&#xFF0C;mapper.xml&#x6587;&#x4EF6;&#x4E2D;&#x663E;&#x5F0F;&#x58F0;&#x660E;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#x3002;&#x5173;&#x4E8E;mybatis&#x7684;Mapper xml&#x7F16;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x4E86;&#xFF0C;&#x53C2;&#x8003; <a href="https://mybatis.org/mybatis-3/sqlmap-xml.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a> &#x6216;&#x8005; <a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html" target="_blank">&#x5B98;&#x65B9;&#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&#x6587;&#x6863;</a>&#x3002;</p>
+<h2 id="&#x5B9E;&#x4F53;&#x7C7B;">&#x5B9E;&#x4F53;&#x7C7B;</h2>
+<pre><code class="lang-java">@BoxTable(name = &quot;SYS_USER&quot;)
+public class SysUserEntity extends BaseEntity {
+
+    /**
+     * &#x7528;&#x6237;&#x540D;
+     */
+    @BoxColumn(name = &quot;USER_NAME&quot;)
+    protected String userName;
+
+    /**
+     * &#x5BC6;&#x7801;
+     */
+    protected String password;
+
+    /**
+     * &#x7528;&#x6237;&#x6635;&#x79F0;
+     */
+    @BoxColumn(name = &quot;NICK_NAME&quot;)
+    protected String nickName;
+
+    /**
+     * &#x6027;&#x522B;
+     */
+    protected int sex;
+
+    /**
+     * &#x90AE;&#x7BB1;
+     */
+    protected String email;
+
+    /**
+     * &#x624B;&#x673A;
+     */
+    protected String mobile;
+
+    // &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E86; geeter / setter &#x65B9;&#x6CD5;
+}
+</code></pre>
+<ul>
+<li>BaseEntity - &#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#xFF0C;&#x5C01;&#x88C5;&#x4E86;&#x57FA;&#x672C;&#x4E0A;&#x6BCF;&#x4E2A;&#x8868;&#x90FD;&#x4F1A;&#x5177;&#x5907;&#x7684;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x5C5E;&#x6027;&#x3002;</li>
+<li>BoxTable - &#x8868;&#x6807;&#x8BB0;&#x6CE8;&#x89E3;&#xFF0C;&#x5F53;&#x5B9E;&#x9645;&#x7684;&#x8868;&#x540D;&#x4E0E;&#x5B9E;&#x4F53;&#x7C7B;&#x7C7B;&#x540D;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;name&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;</li>
+<li>BoxColumn - &#x5217;&#x6807;&#x8BB0;&#x6CE8;&#x89E3;&#xFF0C;&#x5F53;&#x5B9E;&#x9645;&#x7684;&#x5217;&#x540D;&#x4E0E;&#x5B9E;&#x4F53;&#x7C7B;&#x5C5E;&#x6027;&#x540D;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;name&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;</li>
+</ul>
+<h3 id="baseentity&#x4E3B;&#x8981;&#x4EE3;&#x7801;&#x5982;&#x4E0B;">BaseEntity&#x4E3B;&#x8981;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</h3>
+<pre><code class="lang-java">@BoxIgnore
+public class BaseEntity extends AbstractEntity&lt;String&gt; {
+
+    @BoxId
+    @BoxColumn(name = &quot;ID&quot;)
+    protected String id;
+
+    /**
+     * &#x521B;&#x5EFA;&#x65F6;&#x95F4;
+     */
+    @BoxColumn(name = &quot;CREATE_TIME&quot;)
+    protected Date createTime;
+
+    /**
+     * &#x521B;&#x5EFA;&#x7528;&#x6237;
+     */
+    @BoxColumn(name = &quot;CREATE_USER&quot;)
+    protected String createUser;
+
+    /**
+     * &#x4FEE;&#x6539;&#x65F6;&#x95F4;
+     */
+    @BoxColumn(name = &quot;UPDATE_TIME&quot;)
+    protected Date updateTime;
+
+    /**
+     * &#x4FEE;&#x6539;&#x7528;&#x6237;
+     */
+    @BoxColumn(name = &quot;UPDATE_USER&quot;)
+    protected String updateUser;
+
+    /**
+     * &#x662F;&#x5426;&#x6807;&#x8BB0;&#x5220;&#x9664;:0-&#x672A;&#x6807;&#x8BB0;&#x5220;&#x9664;&#xFF1B;1-&#x6807;&#x8BB0;&#x5220;&#x9664;&#xFF1B;
+     */
+    @BoxColumn(name = &quot;IS_DELETED&quot;)
+    protected Boolean isDeleted;
+
+    // &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E86; geeter / setter &#x65B9;&#x6CD5;
+}
+</code></pre>
+<h2 id="dao&#x63A5;&#x53E3;">Dao&#x63A5;&#x53E3;</h2>
+<pre><code class="lang-java">@BoxDao
+public interface SysUserDao extends IBaseDao&lt;SysUserEntity, String&gt; {
+    int updatePassword(SysUserEntity sysUserEntity);
+}
+</code></pre>
+<ul>
+<li>BoxDao - Dao&#x5BF9;&#x8C61;&#x6CE8;&#x89E3;&#xFF0C;&#x6807;&#x6CE8;&#x4E86;&#x6B64;&#x6CE8;&#x89E3;&#x7684;&#x63A5;&#x53E3;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x8FDB;&#x884C;&#x626B;&#x63CF;&#x5904;&#x7406;&#x3002;</li>
+<li>IBaseDao - &#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E86;&#x7B80;&#x5355;&#x589E;&#x3001;&#x5220;&#x3001;&#x6539;&#x3001;&#x67E5;&#x64CD;&#x4F5C;&#x7684;&#x57FA;&#x7840;&#x63A5;&#x53E3;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;&#x6B64;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x7F16;&#x5199;Mapper xml&#x5B9E;&#x73B0;&#xFF0C;&#x7531;&#x6846;&#x67B6;&#x6839;&#x636E;&#x6570;&#x636E;&#x5E93;&#x73AF;&#x5883;&#x81EA;&#x52A8;&#x9002;&#x914D;&#xFF0C;&#x5F53;&#x524D;&#x7248;&#x672C;&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6709;Mysql&#x3001;Oracle&#x3002;</li>
+<li>String - &#x4E3B;&#x952E;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x6B64;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;Mapper xml&#x4E2D;&#x63D0;&#x4F9B;&#x81EA;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;updatePassword&#x65B9;&#x6CD5;&#x7684;sql&#x8BED;&#x53E5;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="ibasedao&#x5B9A;&#x4E49;&#x5982;&#x4E0B;">IBaseDao&#x5B9A;&#x4E49;&#x5982;&#x4E0B;</h3>
+<pre><code class="lang-java">/**
+     * &#x63D2;&#x5165;&#x6570;&#x636E;
+     *
+     * @param entity &#x5B9E;&#x4F53;&#x5BF9;&#x8C61;
+     * @return &#x53D7;&#x5F71;&#x54CD;&#x7684;&#x8BB0;&#x5F55;&#x6570;
+     */
+    &lt;S extends T&gt; int insertEntity(S entity);
+
+    /**
+     * &#x4FEE;&#x6539;&#x6570;&#x636E;
+     *
+     * @param entity &#x5B9E;&#x4F53;&#x5BF9;&#x8C61;
+     * @return &#x53D7;&#x5F71;&#x54CD;&#x7684;&#x8BB0;&#x5F55;&#x6570;
+     */
+    &lt;S extends T&gt; int updateEntity(S entity);
+
+    /**
+     * &#x5220;&#x9664;&#x6307;&#x5B9A;&#x6807;&#x8BC6;&#x6570;&#x636E;
+     *
+     * @param id &#x552F;&#x4E00;&#x6807;&#x8BC6;
+     * @return &#x53D7;&#x5F71;&#x54CD;&#x7684;&#x8BB0;&#x5F55;&#x6570;
+     */
+    int deleteById(ID id);
+
+    /**
+     * &#x5220;&#x9664;&#x6307;&#x5B9A;&#x6807;&#x8BC6;&#x6570;&#x636E;
+     *
+     * @param ids &#x552F;&#x4E00;&#x6807;&#x8BC6;&#x96C6;&#x5408;
+     * @return &#x53D7;&#x5F71;&#x54CD;&#x7684;&#x8BB0;&#x5F55;&#x6570;
+     */
+    int deleteByIds(List&lt;? extends ID&gt; ids);
+
+    /**
+     * &#x5220;&#x9664;&#x6240;&#x6709;&#x6570;&#x636E;
+     *
+     * @return &#x53D7;&#x5F71;&#x54CD;&#x7684;&#x8BB0;&#x5F55;&#x6570;
+     */
+    int deleteAll();
+
+    /**
+     * &#x7EDF;&#x8BA1;&#x603B;&#x6570;&#x91CF;
+     *
+     * @return &#x603B;&#x6570;&#x91CF;
+     */
+    long countAll();
+
+    /**
+     * &#x662F;&#x5426;&#x5B58;&#x5728;&#x6307;&#x5B9A;&#x6807;&#x8BC6;&#x6570;&#x636E;
+     *
+     * @param id &#x552F;&#x4E00;&#x6807;&#x8BC6;
+     * @return true / false
+     */
+    Boolean existsById(ID id);
+
+    /**
+     * &#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x6807;&#x8BC6;&#x6570;&#x636E;
+     *
+     * @param id &#x552F;&#x4E00;&#x6807;&#x8BC6;
+     * @return &#x6570;&#x636E;
+     */
+    T queryById(ID id);
+
+    /**
+     * &#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x6807;&#x8BC6;&#x6570;&#x636E;
+     *
+     * @param ids &#x552F;&#x4E00;&#x6807;&#x8BC6;&#x96C6;&#x5408;
+     * @return &#x6570;&#x636E;
+     */
+    List&lt;T&gt; queryByIds(List&lt;? extends ID&gt; ids);
+
+    /**
+     * &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;
+     *
+     * @return &#x6240;&#x6709;&#x6570;&#x636E;
+     */
+    List&lt;T&gt; queryAll();
+
+    /**
+     * &#x67E5;&#x8BE2;&#x5206;&#x9875;&#x6570;&#x636E;
+     *
+     * @param pageNum  &#x9875;&#x7801;
+     * @param pageSize &#x6BCF;&#x9875;&#x5927;&#x5C0F;
+     * @return &#x5206;&#x9875;&#x6570;&#x636E;
+     */
+    List&lt;T&gt; queryAllByPage(int pageNum, int pageSize);
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="config.html" class="navigation navigation-prev " aria-label="Previous page: 配置文件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="controller.html" class="navigation navigation-next " aria-label="Next page: 路由控制层">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据访问层","level":"1.4.2","depth":2,"next":{"title":"路由控制层","level":"1.4.3","depth":2,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},"previous":{"title":"配置文件","level":"1.4.1","depth":2,"path":"src/guide/config.md","ref":"src/guide/config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-highlight","-mermaid","-katex","-lunr","-search","-search-pro","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/dao.md","mtime":"2019-10-16T07:09:05.808Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T14:40:36.869Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+
+    </body>
+</html>
+
