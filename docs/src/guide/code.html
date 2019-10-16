@@ -24,6 +24,22 @@
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
         
 
     
@@ -66,6 +82,10 @@
     <div class="book-summary">
         
             
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
             
                 <nav role="navigation">
                 
@@ -292,6 +312,9 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
+<div id="book-search-results">
+    <div class="search-noresults">
+    
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x4E1A;&#x52A1;&#x7F16;&#x7801;">&#x4E1A;&#x52A1;&#x7F16;&#x7801;</h1>
@@ -303,50 +326,50 @@ S0000002=&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} par
 <h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;">&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;</h2>
 <p>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5FC5;&#x987B;&#x662F;<strong>&#x679A;&#x4E3E;&#x7C7B;&#x578B;</strong>&#xFF0C;&#x4E14;<strong>&#x5B9E;&#x73B0;IBizcode&#x63A5;&#x53E3;</strong>&#x624D;&#x80FD;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x3002;
 &#x7C7B;&#x540D;&#x79F0;&#x5EFA;&#x8BAE;<strong>&#x7EDF;&#x4E00;&#x4F7F;&#x7528;BizCode&#x524D;&#x7F00;</strong>&#xFF0C;&#x4FBF;&#x4E8E;&#x4F7F;&#x7528;&#x8005;&#x5728;IDE&#x4E2D;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x63D0;&#x793A;&#xFF0C;&#x5982;BizCodeSys&#xFF0C;BizCodeUser&#xFF0C;...&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x7528;&#x523B;&#x610F;&#x67E5;&#x627E;&#x6587;&#x6863;&#xFF0C;&#x53EA;&#x8981;&#x5728;IDE&#x4E2D;&#x8F93;&#x5165;BizCode&#x5C31;&#x53EF;&#x8BF1;&#x5BFC;&#x51FA;&#x5404;&#x6A21;&#x5757;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x7801;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">import com.wee0.box.code.IBizCode;
-public enum BizCodeTest implements IBizCode{
-    SystemError(&quot;S0000001&quot;),
-    SystemErrorInfo(&quot;S0000002&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.IBizCode;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> BizCodeTest implements IBizCode{
+    SystemError(<span class="hljs-string">&quot;S0000001&quot;</span>),
+    SystemErrorInfo(<span class="hljs-string">&quot;S0000002&quot;</span>);
 
-    private final String CODE;
-    BizCodeDef(String code) { this.CODE = code; }
-    @Override
-    public String getCode() { return this.CODE; }
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String CODE;
+    BizCodeDef(String code) { <span class="hljs-keyword">this</span>.CODE = code; }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getCode</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.CODE; }
 }
 </code></pre>
 <p>&#x5982;&#x679C;&#x6709;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;IBizCodeInitializer&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">import com.wee0.box.code.IBizCodeInitializer;
-public enum BizCodeTestInitializer implements IBizCodeInitializer{
-    @Override
-    public void initialize(IBizCodeSetter setter) {
-        setter.set(BizCodeTest.SystemError, &quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;);
-        setter.set(BizCodeTest.SystemErrorInfo, &quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.IBizCodeInitializer;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> BizCodeTestInitializer implements IBizCodeInitializer{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">(IBizCodeSetter setter)</span> </span>{
+        setter.set(BizCodeTest.SystemError, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;</span>);
+        setter.set(BizCodeTest.SystemErrorInfo, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>);
     }
 }
 </code></pre>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x5408;&#x5E76;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x7C7B;&#x4E2D;&#x5B8C;&#x6210;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public enum BizCodeTest implements IBizCode, IBizCodeInitializer{
-    SystemError(&quot;S0000001&quot;),
-    SystemErrorInfo(&quot;S0000002&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> BizCodeTest implements IBizCode, IBizCodeInitializer{
+    SystemError(<span class="hljs-string">&quot;S0000001&quot;</span>),
+    SystemErrorInfo(<span class="hljs-string">&quot;S0000002&quot;</span>);
 
-    private final String CODE;
-    BizCodeDef(String code) { this.CODE = code; }
-    @Override
-    public String getCode() { return this.CODE; }
-    @Override
-    public void initialize(IBizCodeSetter setter) {
-        setter.set(SystemError, &quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;);
-        setter.set(SystemErrorInfo, &quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;);
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String CODE;
+    BizCodeDef(String code) { <span class="hljs-keyword">this</span>.CODE = code; }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getCode</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.CODE; }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">(IBizCodeSetter setter)</span> </span>{
+        setter.set(SystemError, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;</span>);
+        setter.set(SystemErrorInfo, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>);
     }
 }
 </code></pre>
 <p>&#x5728;Java&#x4EE3;&#x7801;&#x4E2D;&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x4E1A;&#x52A1;&#x679A;&#x4E3E;&#x7C7B;&#x548C;&#x521D;&#x59CB;&#x5316;&#x5668;</p>
-<pre><code class="lang-java">import com.wee0.box.code.BizCodeManager;
-public class App{
-    public void init(){
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.BizCodeManager;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>{
        BizCodeManager.impl().addBizCodeEnum(BizCodeTest.class); 
-       // &#x5982;&#x679C;&#x679A;&#x4E3E;&#x7C7B;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;IBizCodeInitializer&#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x6CE8;&#x518C;&#x521D;&#x59CB;&#x5316;&#x5668;&#x3002;
-       BizCodeManager.impl().addBizCodeInitializer(new BizCodeTestInitializer());
+       <span class="hljs-comment">// &#x5982;&#x679C;&#x679A;&#x4E3E;&#x7C7B;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;IBizCodeInitializer&#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x6CE8;&#x518C;&#x521D;&#x59CB;&#x5316;&#x5668;&#x3002;</span>
+       BizCodeManager.impl().addBizCodeInitializer(<span class="hljs-keyword">new</span> BizCodeTestInitializer());
     }
 }
 </code></pre>
@@ -358,29 +381,29 @@ bizCodeManager.bizCodeInitializers=test.BizCodeTestInitializer
 </code></pre>
 <h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
 <p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#xFF0C;&#x5728;box-api&#x5E93;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x5FEB;&#x6377;&#x5165;&#x53E3;&#x7C7B;BizCodeManager&#xFF0C;&#x4F7F;&#x7528;&#x6B64;&#x7C7B;&#x53EF;&#x8FDB;&#x884C;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">import com.wee0.box.code.BizCodeManager;
-import org.junit.Test;
-import org.junit.Assert;
-public class AppTest{
-    @Test
-    public void testGetCodeInfo() {
-       IBizCodeInfo _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemErrorInfo, &quot;p1&quot;, &quot;p2&quot;, &quot;p3&quot;); 
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.BizCodeManager;
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> org.junit.Assert;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppTest</span></span>{
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetCodeInfo</span><span class="hljs-params">()</span> </span>{
+       IBizCodeInfo _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemErrorInfo, <span class="hljs-string">&quot;p1&quot;</span>, <span class="hljs-string">&quot;p2&quot;</span>, <span class="hljs-string">&quot;p3&quot;</span>); 
        Assert.assertNotNull(_bizCodeInfo);
-       Assert.assertEquals(&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;, _bizCodeInfo.getText());
-       Assert.assertEquals(&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;p2  param&#xFF1A;p3&quot;, _bizCodeInfo.formatText());
-       Assert.assertEquals(&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p2 param&#xFF1A;p1  param&#xFF1A;p0&quot;, _bizCodeInfo.formatText(&quot;p2&quot;, &quot;p1&quot;, &quot;p0&quot;));
-       Assert.assertEquals(&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;{1}  param&#xFF1A;{2}&quot;, _bizCodeInfo.formatText(&quot;p1&quot;));
+       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>, _bizCodeInfo.getText());
+       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;p2  param&#xFF1A;p3&quot;</span>, _bizCodeInfo.formatText());
+       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p2 param&#xFF1A;p1  param&#xFF1A;p0&quot;</span>, _bizCodeInfo.formatText(<span class="hljs-string">&quot;p2&quot;</span>, <span class="hljs-string">&quot;p1&quot;</span>, <span class="hljs-string">&quot;p0&quot;</span>));
+       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>, _bizCodeInfo.formatText(<span class="hljs-string">&quot;p1&quot;</span>));
     }
 }
 </code></pre>
 <h4 id="&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5728;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x5F02;&#x5E38;&#x4E2D;&#x7684;&#x5E94;&#x7528;">&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5728;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x5F02;&#x5E38;&#x4E2D;&#x7684;&#x5E94;&#x7528;</h4>
-<pre><code class="lang-java">import com.wee0.box.exception.BizExceptionFactory;
-public class BizExceptionFactoryTest{
-    public void ex1(){
-        throw BizExceptionFactory.create(BizCodeTest.SystemError);
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.exception.BizExceptionFactory;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BizExceptionFactoryTest</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ex1</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">throw</span> BizExceptionFactory.create(BizCodeTest.SystemError);
     }
-    public void ex2(){
-        throw BizExceptionFactory.create(BizCodeTest.SystemErrorInfo, &quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;1&quot;, &quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;2&quot;, &quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;3&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ex2</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">throw</span> BizExceptionFactory.create(BizCodeTest.SystemErrorInfo, <span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;1&quot;</span>, <span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;2&quot;</span>, <span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;3&quot;</span>);
     }
 }
 </code></pre>
@@ -396,26 +419,26 @@ bizCodeManager.bizCodeStore=i18nStore
 <li>config/biz_code_en.properties</li>
 </ul>
 <p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0E;&#x524D;&#x8FB9;&#x4ECB;&#x7ECD;&#x7684;&#x975E;&#x56FD;&#x9645;&#x5316;&#x573A;&#x666F;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x9700;&#x8981;&#x5207;&#x6362;&#x8BED;&#x8A00;&#x7684;&#x5730;&#x65B9;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x8BED;&#x8A00;&#x5207;&#x6362;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x9ED8;&#x8BA4;&#x8BED;&#x8A00;&#x4E3A;&#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x3002;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">import com.wee0.box.i18n.Language;
-import com.wee0.box.i18n.Locale;
-import com.wee0.box.code.BizCodeManager;
-import org.junit.Test;
-import org.junit.Assert;
-public class AppTest{
-    @Test
-    public void testGetCodeInfo() {
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.i18n.Language;
+<span class="hljs-keyword">import</span> com.wee0.box.i18n.Locale;
+<span class="hljs-keyword">import</span> com.wee0.box.code.BizCodeManager;
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> org.junit.Assert;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppTest</span></span>{
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetCodeInfo</span><span class="hljs-params">()</span> </span>{
        IBizCodeInfo _bizCodeInfo;
        Locale.impl().setLanguage(Language.en); 
        _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemError); 
-       Assert.assertEquals(&quot;system exception&quot;, _bizCodeInfo.getText());
+       Assert.assertEquals(<span class="hljs-string">&quot;system exception&quot;</span>, _bizCodeInfo.getText());
 
        Locale.impl().setLanguage(Language.zh_TW); 
        _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemError); 
-       Assert.assertEquals(&quot;&#x7CFB;&#x7D71;&#x5F02;&#x5E38;&quot;, _bizCodeInfo.getText());
+       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7D71;&#x5F02;&#x5E38;&quot;</span>, _bizCodeInfo.getText());
 
        Locale.impl().setLanguage(Language.zh_CN); 
        _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemError); 
-       Assert.assertEquals(&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&quot;, _bizCodeInfo.getText());
+       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&quot;</span>, _bizCodeInfo.getText());
     }
 }
 </code></pre>
@@ -423,6 +446,22 @@ public class AppTest{
                                 
                                 </section>
                             
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 
@@ -446,7 +485,7 @@ public class AppTest{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"业务编码","level":"1.4.5","depth":2,"next":{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},"previous":{"title":"认证鉴权","level":"1.4.4","depth":2,"path":"src/guide/subject.md","ref":"src/guide/subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-highlight","-mermaid","-katex","-lunr","-search","-search-pro","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/code.md","mtime":"2019-10-16T14:16:39.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T14:40:36.869Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"业务编码","level":"1.4.5","depth":2,"next":{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},"previous":{"title":"认证鉴权","level":"1.4.4","depth":2,"path":"src/guide/subject.md","ref":"src/guide/subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","highlight","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/code.md","mtime":"2019-10-16T14:16:39.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T15:08:48.561Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -461,6 +500,22 @@ public class AppTest{
     
         
         <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
 
