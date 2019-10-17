@@ -4,6 +4,8 @@
 
 [文档在线阅读](http://doc.box.wee0.com)
 
+[访问文档源码](https://github.com/baihw/box-docs)
+
 [访问示例项目](https://github.com/baihw/box-examples/tree/dev)
 
 
