@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
                 
             
         
@@ -321,48 +321,48 @@
 <p>&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#x5305;&#xFF1A;<strong>com.wee0.box.cache</strong> </p>
 <p>&#x5F53;&#x524D;&#x7248;&#x672C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x7684;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5207;&#x6362;&#x5230;redis&#x7F13;&#x5B58;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x6846;&#x67B6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<strong><em>box_config.properties</em></strong>&#x4E2D;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p>
 <blockquote>
-<pre><code class="lang-ini"># &#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x7684;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#xFF0C;&#x9ED8;&#x8BA4;&#x3002;
-# com.wee0.box.cache.ICacheManager = com.wee0.box.cache.caffeine.CaffeineCacheManager
-# &#x57FA;&#x4E8E;redis&#x7684;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x3002;
-com.wee0.box.cache.ICacheManager = com.wee0.box.cache.redis.RedisCacheManager
+<pre class="language-"><code class="lang-ini"><span class="token comment"># &#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x7684;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#xFF0C;&#x9ED8;&#x8BA4;&#x3002;</span>
+<span class="token comment"># com.wee0.box.cache.ICacheManager = com.wee0.box.cache.caffeine.CaffeineCacheManager</span>
+<span class="token comment"># &#x57FA;&#x4E8E;redis&#x7684;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x3002;</span>
+<span class="token constant">com.wee0.box.cache.ICacheManager</span> <span class="token attr-value"><span class="token punctuation">=</span> com.wee0.box.cache.redis.RedisCacheManager</span>
 </code></pre>
 </blockquote>
 <p>&#x4F9D;&#x8D56;&#x914D;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- &#x4F7F;&#x7528;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x65F6;&#x9700;&#x8981;&#x589E;&#x52A0;&#x7684;&#x4F9D;&#x8D56; --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.ben-manes.caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>caffeine<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- &#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x65F6;&#x9700;&#x8981;&#x589E;&#x52A0;&#x7684;&#x4F9D;&#x8D56; --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>redis.clients<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jedis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<pre class="language-"><code class="lang-xml"><span class="token comment">&lt;!-- &#x4F7F;&#x7528;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x65F6;&#x9700;&#x8981;&#x589E;&#x52A0;&#x7684;&#x4F9D;&#x8D56; --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.github.ben-manes.caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- &#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x65F6;&#x9700;&#x8981;&#x589E;&#x52A0;&#x7684;&#x4F9D;&#x8D56; --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>redis.clients<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jedis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <p>&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.cache.CacheManager;
-<span class="hljs-keyword">import</span> com.wee0.box.cache.ICache;
-<span class="hljs-keyword">import</span> org.junit.*;
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CacheTest</span></span>{
-    <span class="hljs-meta">@Test</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>{
-        <span class="hljs-comment">// &#x83B7;&#x53D6;test&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;</span>
-        ICache _cache = CacheManager.impl().getCache(<span class="hljs-string">&quot;test&quot;</span>);
-        <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#xFF0C;&#x6700;&#x5927;&#x751F;&#x547D;&#x5468;&#x671F; </span>
-        _cache.put(<span class="hljs-string">&quot;string1&quot;</span>, <span class="hljs-string">&quot;string1.v&quot;</span>);
-        <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#xFF0C;60&#x79D2;&#x540E;&#x8FC7;&#x671F;&#x3002;</span>
-        _cache.put(<span class="hljs-string">&quot;string2&quot;</span>, <span class="hljs-string">&quot;string2.v&quot;</span>, <span class="hljs-number">60</span>);
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>cache</span><span class="token punctuation">.</span><span class="token class-name">CacheManager</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>cache</span><span class="token punctuation">.</span><span class="token class-name">ICache</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CacheTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// &#x83B7;&#x53D6;test&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;</span>
+        <span class="token class-name">ICache</span> _cache <span class="token operator">=</span> <span class="token class-name">CacheManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getCache</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#xFF0C;&#x6700;&#x5927;&#x751F;&#x547D;&#x5468;&#x671F; </span>
+        _cache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;string1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;string1.v&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#xFF0C;60&#x79D2;&#x540E;&#x8FC7;&#x671F;&#x3002;</span>
+        _cache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;string2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;string2.v&quot;</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        Assert.assertEquals(<span class="hljs-string">&quot;string1.v&quot;</span>, cache.get(<span class="hljs-string">&quot;string1&quot;</span>));
-        Assert.assertEquals(<span class="hljs-string">&quot;string2.v&quot;</span>, cache.get(<span class="hljs-string">&quot;string2&quot;</span>));
+        <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;string1.v&quot;</span><span class="token punctuation">,</span> cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;string1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;string2.v&quot;</span><span class="token punctuation">,</span> cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;string2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x7F13;&#x5B58;&#xFF0C;&#x91CD;&#x8BBE;60&#x79D2;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</span>
-        cache.get(<span class="hljs-string">&quot;string2&quot;</span>, <span class="hljs-number">60</span>)
+        <span class="token comment">// &#x8BFB;&#x53D6;&#x7F13;&#x5B58;&#xFF0C;&#x91CD;&#x8BBE;60&#x79D2;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</span>
+        cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;string2&quot;</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span>
 
-        <span class="hljs-comment">// &#x6E05;&#x9664;&#x7F13;&#x5B58;</span>
-        _cache.clear();
-    }
-}
+        <span class="token comment">// &#x6E05;&#x9664;&#x7F13;&#x5B58;</span>
+        _cache<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                                 
@@ -407,7 +407,7 @@ com.wee0.box.cache.ICacheManager = com.wee0.box.cache.redis.RedisCacheManager
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"缓存","level":"1.4.7","depth":2,"next":{"title":"FAQ","level":"1.5","depth":1,"path":"src/faq/faq.md","ref":"src/faq/faq.md","articles":[]},"previous":{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","highlight","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/cache.md","mtime":"2019-10-17T00:49:52.748Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T00:50:06.232Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"缓存","level":"1.4.7","depth":2,"next":{"title":"FAQ","level":"1.5","depth":1,"path":"src/faq/faq.md","ref":"src/faq/faq.md","articles":[]},"previous":{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/cache.md","mtime":"2019-10-17T00:49:52.748Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T01:13:07.771Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
                 
             
         
@@ -320,97 +320,97 @@
                                 <h1 id="&#x4E1A;&#x52A1;&#x7F16;&#x7801;">&#x4E1A;&#x52A1;&#x7F16;&#x7801;</h1>
 <p>&#x7EDF;&#x4E00;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5904;&#x7406;&#x7EC4;&#x4EF6;&#xFF0C;&#x63D0;&#x4F9B;&#x56FD;&#x9645;&#x5316;&#x652F;&#x6301;&#xFF08;&#x975E;&#x9ED8;&#x8BA4;&#xFF0C;&#x9700;&#x914D;&#x7F6E;&#x5F00;&#x542F;&#xFF09;&#x3002;</p>
 <p>&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540D;&#x4E3A; <strong><em>biz_code.properties</em></strong>&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x503C;&#x53EF;&#x8986;&#x76D6;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x521D;&#x59CB;&#x5316;&#x5668;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-properties">S0000001=&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;
-S0000002=&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}
+<pre class="language-"><code class="lang-properties"><span class="token attr-name">S0000001</span><span class="token punctuation">=</span><span class="token attr-value">&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;</span>
+<span class="token attr-name">S0000002</span><span class="token punctuation">=</span><span class="token attr-value">&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}</span>
 </code></pre>
 <h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;">&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;</h2>
 <p>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5FC5;&#x987B;&#x662F;<strong>&#x679A;&#x4E3E;&#x7C7B;&#x578B;</strong>&#xFF0C;&#x4E14;<strong>&#x5B9E;&#x73B0;IBizcode&#x63A5;&#x53E3;</strong>&#x624D;&#x80FD;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x7BA1;&#x7406;&#x5668;&#x4E2D;&#x3002;
 &#x7C7B;&#x540D;&#x79F0;&#x5EFA;&#x8BAE;<strong>&#x7EDF;&#x4E00;&#x4F7F;&#x7528;BizCode&#x524D;&#x7F00;</strong>&#xFF0C;&#x4FBF;&#x4E8E;&#x4F7F;&#x7528;&#x8005;&#x5728;IDE&#x4E2D;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x63D0;&#x793A;&#xFF0C;&#x5982;BizCodeSys&#xFF0C;BizCodeUser&#xFF0C;...&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x7528;&#x523B;&#x610F;&#x67E5;&#x627E;&#x6587;&#x6863;&#xFF0C;&#x53EA;&#x8981;&#x5728;IDE&#x4E2D;&#x8F93;&#x5165;BizCode&#x5C31;&#x53EF;&#x8BF1;&#x5BFC;&#x51FA;&#x5404;&#x6A21;&#x5757;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7F16;&#x7801;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.IBizCode;
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> BizCodeTest implements IBizCode{
-    SystemError(<span class="hljs-string">&quot;S0000001&quot;</span>),
-    SystemErrorInfo(<span class="hljs-string">&quot;S0000002&quot;</span>);
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>code</span><span class="token punctuation">.</span><span class="token class-name">IBizCode</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">BizCodeTest</span> <span class="token keyword">implements</span> <span class="token class-name">IBizCode</span><span class="token punctuation">{</span>
+    <span class="token class-name">SystemError</span><span class="token punctuation">(</span><span class="token string">&quot;S0000001&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">SystemErrorInfo</span><span class="token punctuation">(</span><span class="token string">&quot;S0000002&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String CODE;
-    BizCodeDef(String code) { <span class="hljs-keyword">this</span>.CODE = code; }
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getCode</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.CODE; }
-}
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> CODE<span class="token punctuation">;</span>
+    <span class="token class-name">BizCodeDef</span><span class="token punctuation">(</span><span class="token class-name">String</span> code<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CODE <span class="token operator">=</span> code<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CODE<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5982;&#x679C;&#x6709;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;IBizCodeInitializer&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.IBizCodeInitializer;
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> BizCodeTestInitializer implements IBizCodeInitializer{
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">(IBizCodeSetter setter)</span> </span>{
-        setter.set(BizCodeTest.SystemError, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;</span>);
-        setter.set(BizCodeTest.SystemErrorInfo, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>);
-    }
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>code</span><span class="token punctuation">.</span><span class="token class-name">IBizCodeInitializer</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">BizCodeTestInitializer</span> <span class="token keyword">implements</span> <span class="token class-name">IBizCodeInitializer</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initialize</span><span class="token punctuation">(</span><span class="token class-name">IBizCodeSetter</span> setter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        setter<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemError</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        setter<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemErrorInfo</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x5408;&#x5E76;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x7C7B;&#x4E2D;&#x5B8C;&#x6210;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> BizCodeTest implements IBizCode, IBizCodeInitializer{
-    SystemError(<span class="hljs-string">&quot;S0000001&quot;</span>),
-    SystemErrorInfo(<span class="hljs-string">&quot;S0000002&quot;</span>);
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">BizCodeTest</span> <span class="token keyword">implements</span> <span class="token class-name">IBizCode</span><span class="token punctuation">,</span> <span class="token class-name">IBizCodeInitializer</span><span class="token punctuation">{</span>
+    <span class="token class-name">SystemError</span><span class="token punctuation">(</span><span class="token string">&quot;S0000001&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">SystemErrorInfo</span><span class="token punctuation">(</span><span class="token string">&quot;S0000002&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String CODE;
-    BizCodeDef(String code) { <span class="hljs-keyword">this</span>.CODE = code; }
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getCode</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.CODE; }
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">(IBizCodeSetter setter)</span> </span>{
-        setter.set(SystemError, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;</span>);
-        setter.set(SystemErrorInfo, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>);
-    }
-}
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> CODE<span class="token punctuation">;</span>
+    <span class="token class-name">BizCodeDef</span><span class="token punctuation">(</span><span class="token class-name">String</span> code<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CODE <span class="token operator">=</span> code<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>CODE<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initialize</span><span class="token punctuation">(</span><span class="token class-name">IBizCodeSetter</span> setter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        setter<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token class-name">SystemError</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8DDF;&#x7BA1;&#x7406;&#x5458;&#x8054;&#x7CFB;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        setter<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token class-name">SystemErrorInfo</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5728;Java&#x4EE3;&#x7801;&#x4E2D;&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x4E1A;&#x52A1;&#x679A;&#x4E3E;&#x7C7B;&#x548C;&#x521D;&#x59CB;&#x5316;&#x5668;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.BizCodeManager;
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span></span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>{
-       BizCodeManager.impl().addBizCodeEnum(BizCodeTest.class); 
-       <span class="hljs-comment">// &#x5982;&#x679C;&#x679A;&#x4E3E;&#x7C7B;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;IBizCodeInitializer&#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x6CE8;&#x518C;&#x521D;&#x59CB;&#x5316;&#x5668;&#x3002;</span>
-       BizCodeManager.impl().addBizCodeInitializer(<span class="hljs-keyword">new</span> BizCodeTestInitializer());
-    }
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>code</span><span class="token punctuation">.</span><span class="token class-name">BizCodeManager</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">App</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token class-name">BizCodeManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addBizCodeEnum</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token comment">// &#x5982;&#x679C;&#x679A;&#x4E3E;&#x7C7B;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;IBizCodeInitializer&#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x6CE8;&#x518C;&#x521D;&#x59CB;&#x5316;&#x5668;&#x3002;</span>
+       <span class="token class-name">BizCodeManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addBizCodeInitializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BizCodeTestInitializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5728;&#x6846;&#x67B6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<strong><em>box_config.properties</em></strong>&#x4E2D;&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x4E1A;&#x52A1;&#x679A;&#x4E3E;&#x7C7B;&#x548C;&#x521D;&#x59CB;&#x5316;&#x5668;</p>
-<pre><code class="lang-properties"># &#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x679A;&#x4E3E;&#x7C7B;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#xFF08;,&#xFF09;&#x9694;&#x5F00;&#x3002;
-bizCodeManager.bizCodeEnums=test.BizCodeTest
-# &#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x9ED8;&#x8BA4;&#x503C;&#x521D;&#x59CB;&#x5316;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#xFF08;,&#xFF09;&#x9694;&#x5F00;&#x3002;&#x5982;&#x679C;&#x679A;&#x4E3E;&#x7C7B;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x521D;&#x59CB;&#x5316;&#x5668;&#xFF0C;&#x4E0D;&#x7528;&#x91CD;&#x590D;&#x914D;&#x7F6E;&#x3002;
-bizCodeManager.bizCodeInitializers=test.BizCodeTestInitializer
+<pre class="language-"><code class="lang-properties"><span class="token comment"># &#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x679A;&#x4E3E;&#x7C7B;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#xFF08;,&#xFF09;&#x9694;&#x5F00;&#x3002;</span>
+<span class="token attr-name">bizCodeManager.bizCodeEnums</span><span class="token punctuation">=</span><span class="token attr-value">test.BizCodeTest</span>
+<span class="token comment"># &#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x9ED8;&#x8BA4;&#x503C;&#x521D;&#x59CB;&#x5316;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#xFF08;,&#xFF09;&#x9694;&#x5F00;&#x3002;&#x5982;&#x679C;&#x679A;&#x4E3E;&#x7C7B;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x521D;&#x59CB;&#x5316;&#x5668;&#xFF0C;&#x4E0D;&#x7528;&#x91CD;&#x590D;&#x914D;&#x7F6E;&#x3002;</span>
+<span class="token attr-name">bizCodeManager.bizCodeInitializers</span><span class="token punctuation">=</span><span class="token attr-value">test.BizCodeTestInitializer</span>
 </code></pre>
 <h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
 <p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#xFF0C;&#x5728;box-api&#x5E93;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x5FEB;&#x6377;&#x5165;&#x53E3;&#x7C7B;BizCodeManager&#xFF0C;&#x4F7F;&#x7528;&#x6B64;&#x7C7B;&#x53EF;&#x8FDB;&#x884C;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.code.BizCodeManager;
-<span class="hljs-keyword">import</span> org.junit.Test;
-<span class="hljs-keyword">import</span> org.junit.Assert;
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppTest</span></span>{
-    <span class="hljs-meta">@Test</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetCodeInfo</span><span class="hljs-params">()</span> </span>{
-       IBizCodeInfo _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemErrorInfo, <span class="hljs-string">&quot;p1&quot;</span>, <span class="hljs-string">&quot;p2&quot;</span>, <span class="hljs-string">&quot;p3&quot;</span>); 
-       Assert.assertNotNull(_bizCodeInfo);
-       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>, _bizCodeInfo.getText());
-       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;p2  param&#xFF1A;p3&quot;</span>, _bizCodeInfo.formatText());
-       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p2 param&#xFF1A;p1  param&#xFF1A;p0&quot;</span>, _bizCodeInfo.formatText(<span class="hljs-string">&quot;p2&quot;</span>, <span class="hljs-string">&quot;p1&quot;</span>, <span class="hljs-string">&quot;p0&quot;</span>));
-       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span>, _bizCodeInfo.formatText(<span class="hljs-string">&quot;p1&quot;</span>));
-    }
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>code</span><span class="token punctuation">.</span><span class="token class-name">BizCodeManager</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit</span><span class="token punctuation">.</span><span class="token class-name">Test</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit</span><span class="token punctuation">.</span><span class="token class-name">Assert</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testGetCodeInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token class-name">IBizCodeInfo</span> _bizCodeInfo <span class="token operator">=</span> <span class="token class-name">BizCodeManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getCodeInfo</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemErrorInfo</span><span class="token punctuation">,</span> <span class="token string">&quot;p1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;p2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;p3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertNotNull</span><span class="token punctuation">(</span>_bizCodeInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;{0} param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;p2  param&#xFF1A;p3&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">formatText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p2 param&#xFF1A;p1  param&#xFF1A;p0&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">formatText</span><span class="token punctuation">(</span><span class="token string">&quot;p2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;p1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;p0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#xFF0C;&#x4FE1;&#x606F;&#xFF1A;p1 param&#xFF1A;{1}  param&#xFF1A;{2}&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">formatText</span><span class="token punctuation">(</span><span class="token string">&quot;p1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5728;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x5F02;&#x5E38;&#x4E2D;&#x7684;&#x5E94;&#x7528;">&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5728;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x5F02;&#x5E38;&#x4E2D;&#x7684;&#x5E94;&#x7528;</h4>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.exception.BizExceptionFactory;
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BizExceptionFactoryTest</span></span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ex1</span><span class="hljs-params">()</span></span>{
-        <span class="hljs-keyword">throw</span> BizExceptionFactory.create(BizCodeTest.SystemError);
-    }
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ex2</span><span class="hljs-params">()</span></span>{
-        <span class="hljs-keyword">throw</span> BizExceptionFactory.create(BizCodeTest.SystemErrorInfo, <span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;1&quot;</span>, <span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;2&quot;</span>, <span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;3&quot;</span>);
-    }
-}
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>exception</span><span class="token punctuation">.</span><span class="token class-name">BizExceptionFactory</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BizExceptionFactoryTest</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ex1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token class-name">BizExceptionFactory</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemError</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">ex2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token class-name">BizExceptionFactory</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemErrorInfo</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4FE1;&#x606F;&#x53C2;&#x6570;3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="&#x56FD;&#x9645;&#x5316;&#x652F;&#x6301;">&#x56FD;&#x9645;&#x5316;&#x652F;&#x6301;</h2>
 <p>&#x5728;&#x6846;&#x67B6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<strong><em>box_config.properties</em></strong>&#x4E2D;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528;&#x652F;&#x6301;&#x56FD;&#x9645;&#x5316;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#xFF1A;</p>
-<pre><code class="lang-properties"># &#x7F16;&#x7801;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#xFF1A;&#x4E0D;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x4E3A;simpleStore&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x56FD;&#x9645;&#x5316;&#x652F;&#x6301;&#xFF0C;&#x5219;&#x914D;&#x7F6E;&#x4E3A;i18nStore&#x3002;
-bizCodeManager.bizCodeStore=i18nStore
+<pre class="language-"><code class="lang-properties"><span class="token comment"># &#x7F16;&#x7801;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#xFF1A;&#x4E0D;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x4E3A;simpleStore&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x56FD;&#x9645;&#x5316;&#x652F;&#x6301;&#xFF0C;&#x5219;&#x914D;&#x7F6E;&#x4E3A;i18nStore&#x3002;</span>
+<span class="token attr-name">bizCodeManager.bizCodeStore</span><span class="token punctuation">=</span><span class="token attr-value">i18nStore</span>
 </code></pre>
 <p>&#x63D0;&#x4F9B;&#x5BF9;&#x5E94;&#x8BED;&#x8A00;&#x7684;&#x4E1A;&#x52A1;&#x7F16;&#x7801;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x524D;&#x7248;&#x672C;&#x652F;&#x6301;&#x4E2D;&#x6587;&#x7B80;&#x4F53;&#x3001;&#x4E2D;&#x6587;&#x7E41;&#x4F53;&#x3001;&#x82F1;&#x6587;&#x3002;</p>
 <ul>
@@ -419,28 +419,28 @@ bizCodeManager.bizCodeStore=i18nStore
 <li>config/biz_code_en.properties</li>
 </ul>
 <p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0E;&#x524D;&#x8FB9;&#x4ECB;&#x7ECD;&#x7684;&#x975E;&#x56FD;&#x9645;&#x5316;&#x573A;&#x666F;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x9700;&#x8981;&#x5207;&#x6362;&#x8BED;&#x8A00;&#x7684;&#x5730;&#x65B9;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x8BED;&#x8A00;&#x5207;&#x6362;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x9ED8;&#x8BA4;&#x8BED;&#x8A00;&#x4E3A;&#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x3002;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.wee0.box.i18n.Language;
-<span class="hljs-keyword">import</span> com.wee0.box.i18n.Locale;
-<span class="hljs-keyword">import</span> com.wee0.box.code.BizCodeManager;
-<span class="hljs-keyword">import</span> org.junit.Test;
-<span class="hljs-keyword">import</span> org.junit.Assert;
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppTest</span></span>{
-    <span class="hljs-meta">@Test</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetCodeInfo</span><span class="hljs-params">()</span> </span>{
-       IBizCodeInfo _bizCodeInfo;
-       Locale.impl().setLanguage(Language.en); 
-       _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemError); 
-       Assert.assertEquals(<span class="hljs-string">&quot;system exception&quot;</span>, _bizCodeInfo.getText());
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>i18n</span><span class="token punctuation">.</span><span class="token class-name">Language</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>i18n</span><span class="token punctuation">.</span><span class="token class-name">Locale</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>code</span><span class="token punctuation">.</span><span class="token class-name">BizCodeManager</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit</span><span class="token punctuation">.</span><span class="token class-name">Test</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>junit</span><span class="token punctuation">.</span><span class="token class-name">Assert</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppTest</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testGetCodeInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token class-name">IBizCodeInfo</span> _bizCodeInfo<span class="token punctuation">;</span>
+       <span class="token class-name">Locale</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setLanguage</span><span class="token punctuation">(</span><span class="token class-name">Language</span><span class="token punctuation">.</span>en<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       _bizCodeInfo <span class="token operator">=</span> <span class="token class-name">BizCodeManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getCodeInfo</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemError</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;system exception&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-       Locale.impl().setLanguage(Language.zh_TW); 
-       _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemError); 
-       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7D71;&#x5F02;&#x5E38;&quot;</span>, _bizCodeInfo.getText());
+       <span class="token class-name">Locale</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setLanguage</span><span class="token punctuation">(</span><span class="token class-name">Language</span><span class="token punctuation">.</span>zh_TW<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       _bizCodeInfo <span class="token operator">=</span> <span class="token class-name">BizCodeManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getCodeInfo</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemError</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7CFB;&#x7D71;&#x5F02;&#x5E38;&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-       Locale.impl().setLanguage(Language.zh_CN); 
-       _bizCodeInfo = BizCodeManager.impl().getCodeInfo(BizCodeTest.SystemError); 
-       Assert.assertEquals(<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&quot;</span>, _bizCodeInfo.getText());
-    }
-}
+       <span class="token class-name">Locale</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setLanguage</span><span class="token punctuation">(</span><span class="token class-name">Language</span><span class="token punctuation">.</span>zh_CN<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       _bizCodeInfo <span class="token operator">=</span> <span class="token class-name">BizCodeManager</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getCodeInfo</span><span class="token punctuation">(</span><span class="token class-name">BizCodeTest</span><span class="token punctuation">.</span><span class="token class-name">SystemError</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token class-name">Assert</span><span class="token punctuation">.</span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&quot;</span><span class="token punctuation">,</span> _bizCodeInfo<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                                 
@@ -485,7 +485,7 @@ bizCodeManager.bizCodeStore=i18nStore
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"业务编码","level":"1.4.5","depth":2,"next":{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},"previous":{"title":"认证鉴权","level":"1.4.4","depth":2,"path":"src/guide/subject.md","ref":"src/guide/subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","highlight","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/code.md","mtime":"2019-10-16T14:16:39.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T00:50:06.232Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"业务编码","level":"1.4.5","depth":2,"next":{"title":"日志","level":"1.4.6","depth":2,"path":"src/guide/log.md","ref":"src/guide/log.md","articles":[]},"previous":{"title":"认证鉴权","level":"1.4.4","depth":2,"path":"src/guide/subject.md","ref":"src/guide/subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/code.md","mtime":"2019-10-16T14:16:39.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T01:13:07.771Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
