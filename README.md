@@ -2,9 +2,9 @@
 
 一个希望能够保持简约，并且具有较强的环境适应性的快速开发框架。
 
-[示例项目地址](https://github.com/baihw/box-examples/tree/dev)
+[文档在线阅读](http://doc.box.wee0.com)
 
-[文档地址](http://doc.box.wee0.com)
+[访问示例项目](https://github.com/baihw/box-examples/tree/dev)
 
 
 
