@@ -318,7 +318,66 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8BA4;&#x8BC1;&#x9274;&#x6743;">&#x8BA4;&#x8BC1;&#x9274;&#x6743;</h1>
-<p>&#x5F85;&#x8865;&#x5145;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x5F53;&#x524D;&#x7248;&#x672C;&#x7684;&#x8BA4;&#x8BC1;&#x9274;&#x6743;&#x7EC4;&#x4EF6;&#x65F6;&#x901A;&#x8FC7;shiro&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x589E;&#x52A0;shiro&#x4F9D;&#x8D56;&#xFF0C;&#x5E76;&#x589E;&#x52A0;shiro.ini&#x914D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.shiro<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>shiro-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p>shiro.ini&#x53C2;&#x8003;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-ini">[main]
+boxJdbcRealm = com.wee0.box.subject.shiro.BoxJdbcRealm
+boxJdbcRealm.queryUser = select id from sys_user where user_name=? and password= ?
+boxJdbcRealm.queryRole = select a.role_name from sys_role a join sys_user_role_rel b on a.id=b.role_id where b.user_id=?
+boxJdbcRealm.queryPermission = select a.permission_code from sys_permission a join sys_role_permission_rel b on a.id=b.permission_id join sys_user_role_rel c on c.role_id=b.role_id where c.user_id=?
+securityManager.realms = $boxJdbcRealm
+
+# &#x57FA;&#x4E8E;&#x7F13;&#x5B58;&#x7684;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;
+sessionDAO = org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO
+securityManager.sessionManager.sessionDAO = $sessionDAO
+# &#x4F1A;&#x8BDD;&#x6807;&#x8BC6;&#x751F;&#x6210;&#x5668;
+sessionIdGenerator = com.wee0.box.subject.shiro.BoxSessionIdGenerator
+securityManager.sessionManager.sessionDAO.sessionIdGenerator = $sessionIdGenerator
+# 3,600,000 milliseconds = 1 hour
+securityManager.sessionManager.globalSessionTimeout = 3600000
+
+cacheManager = com.wee0.box.subject.shiro.BoxCacheManager
+securityManager.cacheManager = $cacheManager
+</code></pre>
+<ul>
+<li>BoxJdbcRealm - &#x901A;&#x8FC7;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7528;&#x6237;&#x3001;&#x89D2;&#x8272;&#x3001;&#x6743;&#x9650;&#x4FE1;&#x606F;&#x7684;&#x8BA4;&#x8BC1;&#x5B9E;&#x73B0;</li>
+<li>boxJdbcRealm.queryUser - &#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x767B;&#x9646;&#x8BA4;&#x8BC1;&#x65F6;&#x6267;&#x884C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x63A5;&#x6536;2&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x767B;&#x9646;&#x6807;&#x8BC6;&#x3001;&#x767B;&#x9646;&#x5BC6;&#x7801;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x3002;&#x53EF;&#x6309;&#x7167;&#x6B64;&#x89C4;&#x5219;&#x6839;&#x636E;&#x9879;&#x76EE;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x6765;&#x4FEE;&#x6539;&#x6B64;&#x8BED;&#x53E5;&#x3002;</li>
+<li>boxJdbcRealm.queryRole - &#x914D;&#x7F6E;&#x67E5;&#x8BE2;&#x767B;&#x9646;&#x7528;&#x6237;&#x89D2;&#x8272;&#x540D;&#x79F0;&#x96C6;&#x5408;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x63A5;&#x6536;1&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x7528;&#x6237;&#x767B;&#x9646;&#x6210;&#x529F;&#x540E;&#x4E0A;&#x8FB9;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x7684;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6; &#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x7EC4;&#x89D2;&#x8272;&#x540D;&#x79F0;&#x96C6;&#x5408;&#x3002;&#x5982;&#xFF1A;admin&#xFF0C;guest&#xFF0C;...&#x3002;</li>
+<li>boxJdbcRealm.queryPermission - &#x914D;&#x7F6E;&#x67E5;&#x8BE2;&#x767B;&#x9646;&#x7528;&#x6237;&#x6743;&#x9650;&#x540D;&#x79F0;&#x96C6;&#x5408;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x63A5;&#x6536;1&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x7528;&#x6237;&#x767B;&#x9646;&#x6210;&#x529F;&#x540E;&#x4E0A;&#x8FB9;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x7684;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6; &#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x7EC4;&#x6743;&#x9650;&#x540D;&#x79F0;&#x96C6;&#x5408;&#x3002;&#x5982;&#xFF1A;common_read&#xFF0C;common_write&#xFF0C;...&#x3002;</li>
+<li>BoxCacheManager - &#x57FA;&#x4E8E;&#x6846;&#x67B6;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#x9002;&#x914D;&#x7684;shiro&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7EC4;&#x4EF6;&#x3002;&#x5F53;&#x6846;&#x67B6;&#x4F7F;&#x7528;redis&#x505A;&#x4E3A;&#x7F13;&#x5B58;&#x5B9E;&#x73B0;&#x65F6;&#xFF0C;&#x53EF;&#x5B9E;&#x73B0;&#x591A;&#x8282;&#x70B9;&#x5171;&#x4EAB;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x529F;&#x80FD;&#x3002;</li>
+</ul>
+<h2 id="java&#x6CE8;&#x89E3;">Java&#x6CE8;&#x89E3;</h2>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5728;Java&#x4EE3;&#x7801;&#x4E2D;&#x4F7F;&#x7528;&#x8BA4;&#x8BC1;&#x9274;&#x6743;&#x529F;&#x80FD;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x6743;&#x9650;&#x4E0E;&#x89D2;&#x8272;&#x68C0;&#x67E5;&#x652F;&#x6301;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;BoxAction&#x6CE8;&#x89E3;&#x7684;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@BoxAction</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x6B64;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x7528;&#x6237;&#x5177;&#x5907;&#x540D;&#x79F0;&#x4E3A;&#x201C;common_delete&#x201D;&#x7684;&#x6743;&#x9650;&#x3002;</span>
+    <span class="hljs-meta">@BoxRequirePermissions</span>(<span class="hljs-string">&quot;common_delete&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">permission1</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x6B64;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x7528;&#x6237;&#x540C;&#x65F6;&#x5177;&#x5907;&#x540D;&#x79F0;&#x4E3A;&#x201C;common_read&#x201D;&#x548C;&#x201C;common_query&#x201D;&#x7684;&#x6743;&#x9650;&#x3002;</span>
+    <span class="hljs-meta">@BoxRequirePermissions</span>(value = {<span class="hljs-string">&quot;common_read&quot;</span>, <span class="hljs-string">&quot;common_query&quot;</span>})
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">permission2</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x6B64;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x7528;&#x6237;&#x5177;&#x5907;&#x540D;&#x79F0;&#x4E3A;&#x201C;admin&#x201D;&#x7684;&#x89D2;&#x8272;&#x3002;</span>
+    <span class="hljs-meta">@BoxRequireRoles</span>(<span class="hljs-string">&quot;admin&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">role1</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x6B64;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x7528;&#x6237;&#x5177;&#x5907;&#x540D;&#x79F0;&#x4E3A;&#x201C;admin&#x201D;&#x6216;&#x8005;&#x201C;guest&#x201D;&#x7684;&#x89D2;&#x8272;&#x3002;</span>
+    <span class="hljs-meta">@BoxRequireRoles</span>(value = {<span class="hljs-string">&quot;admin&quot;</span>, <span class="hljs-string">&quot;guest&quot;</span>}, logical = BoxRequireLogical.OR)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">role2</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x6B64;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x7528;&#x6237;&#x5177;&#x5907;&#x540D;&#x79F0;&#x4E3A;&#x201C;admin&#x201D;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x5E76;&#x4E14;&#x5177;&#x5907;&#x540D;&#x79F0;&#x4E3A;&#x201C;common_delete&#x201D;&#x7684;&#x6743;&#x9650;&#x3002;</span>
+    <span class="hljs-meta">@BoxRequireRoles</span>(<span class="hljs-string">&quot;admin&quot;</span>)
+    <span class="hljs-meta">@BoxRequirePermissions</span>(<span class="hljs-string">&quot;common_delete&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">rolePermission</span><span class="hljs-params">()</span> </span>{}
+
+}
+</code></pre>
 
                                 
                                 </section>
@@ -362,7 +421,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"认证鉴权","level":"1.4.4","depth":2,"next":{"title":"业务编码","level":"1.4.5","depth":2,"path":"src/guide/code.md","ref":"src/guide/code.md","articles":[]},"previous":{"title":"路由控制层","level":"1.4.3","depth":2,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","highlight","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/subject.md","mtime":"2019-10-16T15:06:53.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-16T15:08:48.561Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"认证鉴权","level":"1.4.4","depth":2,"next":{"title":"业务编码","level":"1.4.5","depth":2,"path":"src/guide/code.md","ref":"src/guide/code.md","articles":[]},"previous":{"title":"路由控制层","level":"1.4.3","depth":2,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","highlight","-prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/subject.md","mtime":"2019-10-17T00:47:36.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T00:50:06.232Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

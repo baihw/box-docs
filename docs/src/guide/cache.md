@@ -5,10 +5,31 @@
 当前版本默认使用基于内存的缓存实现，如果需要切换到redis缓存，需要在框架配置文件***box_config.properties***中进行如下配置：
 
 > ```ini
+> # 基于内存的缓存实现，默认。
+> # com.wee0.box.cache.ICacheManager = com.wee0.box.cache.caffeine.CaffeineCacheManager
+> # 基于redis的缓存实现。
 > com.wee0.box.cache.ICacheManager = com.wee0.box.cache.redis.RedisCacheManager
 > ```
 
-独立代码中使用方式如下：
+依赖配置：
+
+```xml
+<!-- 使用内存缓存实现时需要增加的依赖 -->
+<dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+</dependency>
+<!-- 使用redis缓存实现时需要增加的依赖 -->
+<dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+</dependency>
+```
+
+
+
+代码中使用方式如下：
+
 ```java
 import com.wee0.box.cache.CacheManager;
 import com.wee0.box.cache.ICache;
