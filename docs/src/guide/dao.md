@@ -107,7 +107,7 @@ public interface SysUserDao extends IBaseDao<SysUserEntity, String> {
 
 此例子中，只需要在Mapper xml中提供自已定义的updatePassword方法的sql语句即可。
 
-### IBaseDao定义如下
+### IBaseDao接口定义代码如下
 
 ```java
 /**
@@ -196,4 +196,59 @@ public interface SysUserDao extends IBaseDao<SysUserEntity, String> {
      */
     List<T> queryAllByPage(int pageNum, int pageSize);
 ```
+
+## mybatis单文件多数据库语法支持
+
+**适用场景**
+
+一些被其它项目依赖的项目，如果对不同环境进行区别打包发布的话，一来比较麻烦，二来也会导致其它项目在引用时需要根据不同的环境去切换依赖，如oracle环境依赖 *proj-x.y.z-oracle* 版本，mysql环境依赖 *proj-x.y.z-mysql* 版本。由于项目中大部分使用的都是标准sql语法，需要针对数据库环境进行定制的语法点并不多，所以我们可以选择此方案。反之，如果差异性太大，没有多少可重用语法的情况下，建议使用不同数据库不同目录的处理方式，但这并不是个单选问题，它们是可以并存的，所以不用担心必须做出唯一选择，请在合适的场景选择合适的方案。
+
+**使用方法**
+
+在需要对特定数据库进行特殊处理的语句节点加入数据库标识属性*databaseId*，当前可选的值有：mysql, postgres, oracle, db2, sybase, microsoft, h2。
+
+参考以下*mapper.xml*文件示例
+
+```xml
+<mapper namespace="com.wee0.box.examples.dao.SysUserDao">
+  <resultMap id="userMap" type="java.util.Map">
+    <result column="ID" property="id" javaType="java.lang.Integer"/>
+  </resultMap>
+  <sql id="column_list">
+    ID, TITLE
+  </sql>
+  <!-- oracle数据库此节点生效 -->
+  <sql id="where_filters" databaseId="oracle">
+    <where>
+      <if test="startDt != null and startDt!=''">
+      <![CDATA[ AND CREATE_DATE >= to_date(#{startDt},'yyyy-mm-dd') ]]>
+      </if>
+    </where>
+  </sql>
+  <!-- 其它数据库此节点生效 -->
+  <sql id="where_filters">
+    <where>
+      <if test="startDt != null and startDt!=''">
+        <![CDATA[ AND CREATE_DATE >= #{startDt} ]]>
+      </if>
+    </where>
+  </sql>
+  <select id="findUserList" parameterType="map" resultMap="userMap">
+    SELECT
+    <include refid="column_list" />
+    FROM SYS_USER
+    <include refid="where_filters" />
+    ORDER BY CREATE_DATE DESC
+  </select>
+
+  <!-- 试着执行test方法看看效果吧 -->
+  <select id="test" databaseId="oracle">select 1 from dual</select>
+  <select id="test" databaseId="mysql">select 2</select>
+  <select id="test">select 1</select>
+</mapper>    
+```
+
+## mybatis分目录多数据库支持
+
+待补充。。。
 

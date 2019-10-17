@@ -67,6 +67,9 @@ public class Test {
 }
 ```
 
+其它注解：
 
+- BoxRequireIgnore - 用在默认不允许访问的策略环境中，用来标识不需要用户登陆即可访问。
+- BoxRequireUser - 用在默认允许访问的策略环境中，用来标识需要用户登陆后访问。
 
 

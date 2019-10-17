@@ -12,7 +12,7 @@
 import com.wee0.box.log.ILogger;
 import com.wee0.box.log.LoggerFactory;
 public class LogTest{
-    private static ILogger log = LoggerFactory.getLogger(LogTest.class);
+    private static final ILogger log = LoggerFactory.getLogger(LogTest.class);
     public static void main(String[] args) {
         // 最低级别的跟踪日志
         log.trace("trace..., p1:{}", 1);
