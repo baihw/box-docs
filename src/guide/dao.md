@@ -92,6 +92,45 @@ public class BaseEntity extends AbstractEntity<String> {
 }
 ```
 
+### 实体类代码生成工具
+
+实体类也可以通过框架提供的内置工具进行生成，当前版本使用的是*FreeMarker*模板引擎进行生成，所以需要确认在使用生成工具类时正确引入了*FreeMarker*依赖，依赖如下：
+
+```xml
+<dependency>
+    <groupId>org.freemarker</groupId>
+    <artifactId>freemarker</artifactId>
+</dependency>
+```
+
+调用生成代码如下：
+
+```java
+Map<String, Object> _dataModel = new HashMap<>();
+// 实体类所属包名
+_dataModel.put("entityPackage", "com.wee0.box.examples.multiModule.module1.entity");
+// 实体类继承的公共基类
+_dataModel.put("entityBase", "com.wee0.box.examples.multiModule.module1.entity.BaseEntity");
+// 作者名称
+_dataModel.put("author", "baihw");
+// 文件创建时间
+_dataModel.put("createDate", DateUtils.getCurrentDate());
+// 生成的实体类保存文件夹位置
+File _entityDir = new File("D:/test");
+// 不需要在实体类中包含的列，通常是因为在公共基类中已经统一定义了。
+Set<String> _excludeColumns = new HashSet<>(12);
+_excludeColumns.add("ID");
+_excludeColumns.add("CREATE_TIME");
+_excludeColumns.add("CREATE_USER");
+_excludeColumns.add("UPDATE_TIME");
+_excludeColumns.add("UPDATE_USER");
+_excludeColumns.add("IS_DELETED");
+// 调用数据库模板助手类实例生成实体类的方法
+SqlTemplateHelper.impl().generateEntities(_dataModel, "entity.ftl", _entityDir, _excludeColumns);
+```
+
+*entity.ftl* 模板文件可以从示例项目*web工程*的 *src/test/resources/templates/entity.ftl* 位置获取，也可以通过调整模板文件来定制自己的最终生成格式，示例项目*web工程*的 *TestGenerate.java* 源码中有此部分的测试代码。
+
 ## Dao接口
 
 ```java

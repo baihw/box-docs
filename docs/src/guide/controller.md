@@ -66,5 +66,42 @@ public class User {
 
 4. internal方法因为是非public方法，所以不会自动映射。
 
+## 文件上传
+
+当前版本的文件上传功能基于 *commons-fileupload* 组件实现，所以使用之前，请先确认正确添加了依赖
+
+```xml
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+</dependency>
+```
+
+在启动类上排除springboot对 *commons-fileupload* 组件的自动装配
+
+```java
+@SpringBootApplication(exclude = MultipartAutoConfiguration.class)
+public class App {
+}
+```
+
+业务代码中使用上传组件的示例代码如下：
+
+```java
+@BoxAction
+public class UpDown {
+    @BoxInject
+    private IUploadRequestUtils uploadRequestUtils;
+
+    public String upload(HttpServletRequest request) {
+        IUploadRequest _uploadRequest = uploadRequestUtils.parseRequest(request);
+        IUploadFile _file1 = _uploadRequest.getUploadFile("file1");
+        String _toFile = "D:/test/" + _file1.getName();
+        _file1.saveTo(new File(_toFile));
+        return _file;
+    }
+}
+```
+
 
 

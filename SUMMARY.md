@@ -10,6 +10,8 @@
 * [业务编码](src/guide/code.md)
 * [日志](src/guide/log.md)
 * [缓存](src/guide/cache.md)
+* [工具类](src/utils/utils.md)
+  * [校验工具](src/utils/validateUtils.md)
 * [FAQ](src/faq/faq.md)
 
 

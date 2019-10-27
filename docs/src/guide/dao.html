@@ -240,7 +240,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../faq/faq.html">
+        <li class="chapter " data-level="1.11" data-path="../utils/utils.html">
+            
+                <a href="../utils/utils.html">
+            
+                    
+                    工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../utils/validateUtils.html">
+            
+                <a href="../utils/validateUtils.html">
+            
+                    
+                    校验工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../faq/faq.html">
             
                 <a href="../faq/faq.html">
             
@@ -385,6 +417,37 @@
     <span class="token comment">// &#x6B64;&#x5904;&#x7701;&#x7565;&#x4E86; geeter / setter &#x65B9;&#x6CD5;</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<h3 id="&#x5B9E;&#x4F53;&#x7C7B;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5DE5;&#x5177;">&#x5B9E;&#x4F53;&#x7C7B;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5DE5;&#x5177;</h3>
+<p>&#x5B9E;&#x4F53;&#x7C7B;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x7F6E;&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x751F;&#x6210;&#xFF0C;&#x5F53;&#x524D;&#x7248;&#x672C;&#x4F7F;&#x7528;&#x7684;&#x662F;<em>FreeMarker</em>&#x6A21;&#x677F;&#x5F15;&#x64CE;&#x8FDB;&#x884C;&#x751F;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x786E;&#x8BA4;&#x5728;&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5DE5;&#x5177;&#x7C7B;&#x65F6;&#x6B63;&#x786E;&#x5F15;&#x5165;&#x4E86;<em>FreeMarker</em>&#x4F9D;&#x8D56;&#xFF0C;&#x4F9D;&#x8D56;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.freemarker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>freemarker<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x8C03;&#x7528;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> _dataModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x5B9E;&#x4F53;&#x7C7B;&#x6240;&#x5C5E;&#x5305;&#x540D;</span>
+_dataModel<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;entityPackage&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;com.wee0.box.examples.multiModule.module1.entity&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x5B9E;&#x4F53;&#x7C7B;&#x7EE7;&#x627F;&#x7684;&#x516C;&#x5171;&#x57FA;&#x7C7B;</span>
+_dataModel<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;entityBase&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;com.wee0.box.examples.multiModule.module1.entity.BaseEntity&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x4F5C;&#x8005;&#x540D;&#x79F0;</span>
+_dataModel<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;author&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;baihw&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x65F6;&#x95F4;</span>
+_dataModel<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;createDate&quot;</span><span class="token punctuation">,</span> <span class="token class-name">DateUtils</span><span class="token punctuation">.</span><span class="token function">getCurrentDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x751F;&#x6210;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x5939;&#x4F4D;&#x7F6E;</span>
+<span class="token class-name">File</span> _entityDir <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;D:/test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x4E0D;&#x9700;&#x8981;&#x5728;&#x5B9E;&#x4F53;&#x7C7B;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5217;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x516C;&#x5171;&#x57FA;&#x7C7B;&#x4E2D;&#x5DF2;&#x7ECF;&#x7EDF;&#x4E00;&#x5B9A;&#x4E49;&#x4E86;&#x3002;</span>
+<span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> _excludeColumns <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_excludeColumns<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;ID&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_excludeColumns<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;CREATE_TIME&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_excludeColumns<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;CREATE_USER&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_excludeColumns<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;UPDATE_TIME&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_excludeColumns<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;UPDATE_USER&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_excludeColumns<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;IS_DELETED&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x8C03;&#x7528;&#x6570;&#x636E;&#x5E93;&#x6A21;&#x677F;&#x52A9;&#x624B;&#x7C7B;&#x5B9E;&#x4F8B;&#x751F;&#x6210;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</span>
+<span class="token class-name">SqlTemplateHelper</span><span class="token punctuation">.</span><span class="token function">impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">generateEntities</span><span class="token punctuation">(</span>_dataModel<span class="token punctuation">,</span> <span class="token string">&quot;entity.ftl&quot;</span><span class="token punctuation">,</span> _entityDir<span class="token punctuation">,</span> _excludeColumns<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><em>entity.ftl</em> &#x6A21;&#x677F;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4ECE;&#x793A;&#x4F8B;&#x9879;&#x76EE;<em>web&#x5DE5;&#x7A0B;</em>&#x7684; <em>src/test/resources/templates/entity.ftl</em> &#x4F4D;&#x7F6E;&#x83B7;&#x53D6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x6574;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x6765;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x6700;&#x7EC8;&#x751F;&#x6210;&#x683C;&#x5F0F;&#xFF0C;&#x793A;&#x4F8B;&#x9879;&#x76EE;<em>web&#x5DE5;&#x7A0B;</em>&#x7684; <em>TestGenerate.java</em> &#x6E90;&#x7801;&#x4E2D;&#x6709;&#x6B64;&#x90E8;&#x5206;&#x7684;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x3002;</p>
 <h2 id="dao&#x63A5;&#x53E3;">Dao&#x63A5;&#x53E3;</h2>
 <pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@BoxDao</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">SysUserDao</span> <span class="token keyword">extends</span> <span class="token class-name">IBaseDao</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SysUserEntity</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
@@ -572,7 +635,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据访问层","level":"1.5","depth":1,"next":{"title":"路由控制层","level":"1.6","depth":1,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},"previous":{"title":"配置文件","level":"1.4","depth":1,"path":"src/guide/config.md","ref":"src/guide/config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/dao.md","mtime":"2019-10-17T06:59:18.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T06:59:33.720Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据访问层","level":"1.5","depth":1,"next":{"title":"路由控制层","level":"1.6","depth":1,"path":"src/guide/controller.md","ref":"src/guide/controller.md","articles":[]},"previous":{"title":"配置文件","level":"1.4","depth":1,"path":"src/guide/config.md","ref":"src/guide/config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/guide/dao.md","mtime":"2019-10-25T06:46:27.389Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-27T13:48:50.264Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
