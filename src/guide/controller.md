@@ -66,6 +66,26 @@ public class User {
 
 4. internal方法因为是非public方法，所以不会自动映射。
 
+## 统一的响应数据
+
+框架默认响应包含code, message, data三个字段中不为null数据的json格式，如果方法逻辑正常执行得到的返回值将被作为data数据值，code默认为200，message默认为“ok”，可以在配置文件"application.properties"修改，如下：
+```properties
+# 设置请求处理成功时返回的响应代码。默认：200
+box.action.default.resultCode=200
+# 设置请求处理成功时返回的响应消息。默认：ok
+box.action.default.resultMessage=ok
+```
+如果方法逻辑未按预期执行，可通过业务异常工厂类抛出表示错误的业务代码与提示消息，如下：
+```java
+throw BizExceptionFactory.create(BizCodeDef.S000001, "提示消息参数");
+```
+特殊场景下，如果需要自定义响应数据格式时，仅需要将自定义的响应数据类标记为实现了IStruct接口，然后在业务逻辑方法返回自定义类型即可，如下：
+```java
+public class CustomResult implements IStruct {
+    // ......
+}
+```
+
 ## 文件上传
 
 当前版本的文件上传功能基于 *commons-fileupload* 组件实现，所以使用之前，请先确认正确添加了依赖

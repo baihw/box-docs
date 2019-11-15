@@ -12,7 +12,7 @@ shiro.ini参考配置：
 ```ini
 [main]
 boxJdbcRealm = com.wee0.box.subject.shiro.BoxJdbcRealm
-boxJdbcRealm.queryUser = select id from sys_user where user_name=? and password= ?
+boxJdbcRealm.queryUser = select id from sys_user where user_name=? and user_pwd= ?
 boxJdbcRealm.queryRole = select a.role_name from sys_role a join sys_user_role_rel b on a.id=b.role_id where b.user_id=?
 boxJdbcRealm.queryPermission = select a.permission_code from sys_permission a join sys_role_permission_rel b on a.id=b.permission_id join sys_user_role_rel c on c.role_id=b.role_id where c.user_id=?
 securityManager.realms = $boxJdbcRealm

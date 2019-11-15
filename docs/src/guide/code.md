@@ -19,7 +19,7 @@ public enum BizCodeTest implements IBizCode{
     SystemErrorInfo("S0000002");
     
     private final String CODE;
-    BizCodeDef(String code) { this.CODE = code; }
+    BizCodeTest(String code) { this.CODE = code; }
     @Override
     public String getCode() { return this.CODE; }
 }
@@ -27,7 +27,7 @@ public enum BizCodeTest implements IBizCode{
 如果有提供默认值，则可以提供一个实现了IBizCodeInitializer接口的对象。如下：
 ```java
 import com.wee0.box.code.IBizCodeInitializer;
-public enum BizCodeTestInitializer implements IBizCodeInitializer{
+public class BizCodeTestInitializer implements IBizCodeInitializer{
     @Override
     public void initialize(IBizCodeSetter setter) {
         setter.set(BizCodeTest.SystemError, "系统异常，请跟管理员联系");
@@ -42,7 +42,7 @@ public enum BizCodeTest implements IBizCode, IBizCodeInitializer{
     SystemErrorInfo("S0000002");
     
     private final String CODE;
-    BizCodeDef(String code) { this.CODE = code; }
+    BizCodeTest(String code) { this.CODE = code; }
     @Override
     public String getCode() { return this.CODE; }
     @Override

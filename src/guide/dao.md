@@ -118,15 +118,27 @@ _dataModel.put("createDate", DateUtils.getCurrentDate());
 // 生成的实体类保存文件夹位置
 File _entityDir = new File("D:/test");
 // 不需要在实体类中包含的列，通常是因为在公共基类中已经统一定义了。
-Set<String> _excludeColumns = new HashSet<>(12);
+Set<String> _excludeColumns = new HashSet<>(6);
 _excludeColumns.add("ID");
 _excludeColumns.add("CREATE_TIME");
 _excludeColumns.add("CREATE_USER");
 _excludeColumns.add("UPDATE_TIME");
 _excludeColumns.add("UPDATE_USER");
 _excludeColumns.add("IS_DELETED");
+// 不需要在实体类中包含的表，这里排除关系表的生成。
+Set<String> _excludeTables = new HashSet<>(2);
+_excludeTables.add("sys_user_role_rel");
+_excludeTables.add("sys_role_permission_rel");
+// 自定义命名策略
+ISqlTemplateHelper.INamePolicy _namePolicy = new ISqlTemplateHelper.INamePolicy() {
+    @Override
+    public String renameEntity(String original, String current) {
+        // 统一加上Entity后缀。
+        return current + "Entity";
+   }
+};
 // 调用数据库模板助手类实例生成实体类的方法
-SqlTemplateHelper.impl().generateEntities(_dataModel, "entity.ftl", _entityDir, _excludeColumns);
+SqlTemplateHelper.impl().generateEntities(_dataModel, "entity.ftl", _entityDir, _excludeColumns, _excludeTables, _namePolicy);
 ```
 
 *entity.ftl* 模板文件可以从示例项目*web工程*的 *src/test/resources/templates/entity.ftl* 位置获取，也可以通过调整模板文件来定制自己的最终生成格式，示例项目*web工程*的 *TestGenerate.java* 源码中有此部分的测试代码。
@@ -235,6 +247,45 @@ public interface SysUserDao extends IBaseDao<SysUserEntity, String> {
      */
     List<T> queryAllByPage(int pageNum, int pageSize);
 ```
+
+## 分页支持
+
+**使用方法**
+
+默认对名称以“Page”结尾的查询方法进行拦截统一处理，可以通过配置修改为自定义的规则，如下：
+```xml
+<plugin interceptor="com.wee0.box.sql.dao.mybatis.MybatisPageInterceptor">
+    <property name="pageMethodSuffix" value="ByPage"/>
+</plugin>
+```
+
+Java代码使用示例：
+```java
+Map<String, Object> _params = PageHelper.impl().createPageParams(2, 10);
+// 增加其它参数
+_params.put("isDeleted", false);
+// 结果集返回的是当前页的数据
+List<SysUserEntity> _data = sysUserDao.queryAllByPage(_params);
+// 需要分页相关详细数据，如页数，总行数等可以从IPage对象获取。
+IPage _page = PageHelper.impl().parseMap(_params);
+System.out.println("_page: " + _page);
+```
+
+## 事务支持
+
+**使用方法**
+
+```java
+boolean _result = TxManger.impl().tx(() -> {
+    // 修改其它属性，不修改唯一标识 
+    _sysUserDao.updateEntity(_user);
+    // 唯一标识重复，插入失败
+    _sysUserDao.insertEntity(_user);
+});
+// 如果dao方法执行发生异常，将会回滚事务，打印日志，然后返回false。
+System.out.println("transaction result: " + _result);
+```
+
 
 ## mybatis单文件多数据库语法支持
 
