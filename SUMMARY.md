@@ -3,7 +3,7 @@
 * [简介](README.md)
 * [快速开始](src/quickStart.md)
 * [规范约定](src/specification.md)
-* [配置文件](src/guide/config.md)
+* [框架配置](src/guide/config.md)
 * [数据访问层](src/guide/dao.md)
 * [路由控制层](src/guide/controller.md)
 * [认证鉴权](src/guide/subject.md)
