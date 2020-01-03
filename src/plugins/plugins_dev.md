@@ -2,7 +2,8 @@
 
 ## 工程划分
 
-插件分为两个工程：暴露给使用者可见的规范接口工程与使用者不可直接使用的接口实现工程。通常我们命名为“pluginName-api”与“pluginName-impl”。
+插件分为两个工程：暴露给使用者可见的规范接口工程与使用者不可直接使用的接口实现工程。通常我们命名为“pluginName-api”与“pluginName-impl”。    
+
 接口工程可以在开发过程中加入到项目的依赖中直接引用，实现工程的相关产出与依赖物件放置在项目根目录下的plugins目录下的插件标识名称目录下，不可在开发过程中使用。
 
 ## 插件接口工程开发
@@ -104,6 +105,7 @@ plugin.ids=hello
 plugin.hello.interface=com.wee0.box.plugins.hello.IHelloPlugin
 # 插件主接口实现类完全限定名称
 plugin.hello.impl=com.wee0.box.plugins.hello.impl.HelloImpl
+# 插件自定义参数
 plugin.hello.param1=test1
 plugin.hello.param2=test2
 ```
