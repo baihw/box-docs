@@ -51,7 +51,7 @@
        // _params.put("PageSize", "10");
        // _params.put("CurrentPage", "1");
        // _params.put("SendDate", new SimpleDateFormat("yyyyMMdd").format(new Date()));
-       _params.put("PhoneNumber", "13666046266");
+       _params.put("PhoneNumber", "13xxxxxxxxx");
        CMD _result = SmsHelper.impl().querySendSmsDetail(_params);
        System.out.println("result: " + _result);
    }
