@@ -12,6 +12,8 @@
 * [缓存](src/guide/cache.md)
 * [工具类](src/utils/utils.md)
   * [校验工具](src/utils/validateUtils.md)
+* [通知](src/notify/notify.md)
+  * [阿里云短信](src/notify/dySms.md)
 * [插件](src/plugins/plugins.md)
   * [插件开发](src/plugins/plugins_dev.md) 
 * [FAQ](src/faq/faq.md)
