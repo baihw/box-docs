@@ -1,0 +1,586 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>oss云存储插件 · Box参考手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="baihw">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../faq/faq.html" />
+    
+    
+    <link rel="prev" href="plugins_dev.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://doc.box.wee0.com" target="_blank" class="custom-link">box-doc</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../quickStart.html">
+            
+                <a href="../quickStart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../specification.html">
+            
+                <a href="../specification.html">
+            
+                    
+                    规范约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../guide/config.html">
+            
+                <a href="../guide/config.html">
+            
+                    
+                    框架配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../guide/dao.html">
+            
+                <a href="../guide/dao.html">
+            
+                    
+                    数据访问层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../guide/controller.html">
+            
+                <a href="../guide/controller.html">
+            
+                    
+                    路由控制层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../guide/subject.html">
+            
+                <a href="../guide/subject.html">
+            
+                    
+                    认证鉴权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../guide/code.html">
+            
+                <a href="../guide/code.html">
+            
+                    
+                    业务编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../guide/log.html">
+            
+                <a href="../guide/log.html">
+            
+                    
+                    日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../guide/cache.html">
+            
+                <a href="../guide/cache.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../utils/utils.html">
+            
+                <a href="../utils/utils.html">
+            
+                    
+                    工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../utils/validateUtils.html">
+            
+                <a href="../utils/validateUtils.html">
+            
+                    
+                    校验工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../notify/notify.html">
+            
+                <a href="../notify/notify.html">
+            
+                    
+                    通知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../notify/dySms.html">
+            
+                <a href="../notify/dySms.html">
+            
+                    
+                    阿里云短信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="plugins_dev.html">
+            
+                <a href="plugins_dev.html">
+            
+                    
+                    插件开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13.2" data-path="storage_oss.html">
+            
+                <a href="storage_oss.html">
+            
+                    
+                    oss云存储插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >oss云存储插件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="oss&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;">OSS&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
+<p>&#x57FA;&#x4E8E;&#x963F;&#x91CC;&#x4E91;OSS&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<p>&#x7F16;&#x8F91; <strong><em>box_config.properties</em></strong> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x53CA;&#x4F9D;&#x8D56;</p>
+<pre class="language-"><code class="lang-properties"><span class="token comment"># &#x63D2;&#x4EF6;&#x90E8;&#x5206;</span>
+<span class="token comment"># &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x63D2;&#x4EF6;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#xFF1A;SimpleHttpPluginManager&#x3002;</span>
+<span class="token comment"># com.wee0.box.plugin.IPluginManager=com.wee0.box.plugin.impl.SimpleHttpPluginManager</span>
+<span class="token comment"># &#x63D2;&#x4EF6;&#x4ED3;&#x5E93;&#x5730;&#x5740;</span>
+<span class="token attr-name">plugin.repository</span><span class="token punctuation">=</span><span class="token attr-value">http://repo.xxx.com/box/plugins</span>
+<span class="token comment"># &#x4F9D;&#x8D56;&#x7684;&#x63D2;&#x4EF6;&#x96C6;&#x5408;&#xFF0C;&#x591A;&#x4E2A;&#x4E4B;&#x95F4;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;</span>
+<span class="token attr-name">plugin.dependencies</span><span class="token punctuation">=</span><span class="token attr-value">storage-oss:0.1.0</span>
+<span class="token comment"># oss&#x8BBF;&#x95EE;&#x7AEF;&#x70B9;&#xFF0C;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x5F00;&#x901A;&#x7684;&#x5730;&#x5740;&#x57DF;&#x540D;&#x586B;&#x5199;</span>
+<span class="token attr-name">plugin.storage-oss.endpoint</span><span class="token punctuation">=</span><span class="token attr-value">oss-cn-shanghai.aliyuncs.com</span>
+<span class="token comment"># oss&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;</span>
+<span class="token attr-name">plugin.storage-oss.accessKey</span><span class="token punctuation">=</span><span class="token attr-value">xx</span>
+<span class="token attr-name">plugin.storage-oss.secretKey</span><span class="token punctuation">=</span><span class="token attr-value">xx</span>
+<span class="token comment"># &#x9ED8;&#x8BA4;&#x64CD;&#x4F5C;&#x7684;&#x5B58;&#x50A8;&#x6876;</span>
+<span class="token attr-name">plugin.storage-oss.bucket</span><span class="token punctuation">=</span><span class="token attr-value">test1</span>
+<span class="token comment"># &#x81EA;&#x5B9A;&#x4E49;&#x8BBF;&#x95EE;&#x57DF;&#x540D;</span>
+<span class="token attr-name">plugin.storage-oss.domain</span><span class="token punctuation">=</span><span class="token attr-value">http://upload.xxx.com</span>
+</code></pre>
+<h3 id="&#x5E38;&#x7528;&#x64CD;&#x4F5C;">&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>plugin</span><span class="token punctuation">.</span><span class="token class-name">PluginManager</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>storage</span><span class="token punctuation">.</span><span class="token class-name">ICloudStoragePlugin</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ICloudStoragePlugin</span> _storage <span class="token operator">=</span> <span class="token class-name">PluginManager</span><span class="token punctuation">.</span><span class="token function">getPlugin</span><span class="token punctuation">(</span><span class="token class-name">ICloudStoragePlugin</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token string">&quot;test/1.jpg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;&#x516C;&#x5F00;&#x6587;&#x4EF6;&#x201C;test/start.jpg&#x201D;&#x7684;&#x516C;&#x5F00;&#x8BBF;&#x95EE;&#x5730;&#x5740;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">getPublicUrl</span><span class="token punctuation">(</span><span class="token string">&quot;test/start.jpg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;&#x79C1;&#x6709;&#x6587;&#x4EF6;&#x201C;private/start.jpg&#x201D;&#x7684;&#x6388;&#x6743;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#xFF0C;&#x5730;&#x5740;&#x6709;&#x6548;&#x65F6;&#x95F4;300&#x79D2;&#x3002;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">getDownloadUrl</span><span class="token punctuation">(</span><span class="token string">&quot;private/start.jpg&quot;</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x590D;&#x5236;&#x6587;&#x4EF6;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span><span class="token string">&quot;test/1.jpg&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;test/1copy.jpg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5220;&#x9664;&#x6587;&#x4EF6;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">&quot;test/1copy.jpg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;PUT&#x65B9;&#x5F0F;&#x6388;&#x6743;&#x4E0A;&#x4F20;&#x5730;&#x5740;&#xFF0C;&#x5730;&#x5740;&#x6709;&#x6548;&#x65F6;&#x95F4;300&#x79D2;&#x3002;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">getUploadUrl</span><span class="token punctuation">(</span><span class="token string">&quot;test/1.jpg&quot;</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token string">&quot;image/jpeg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;POST&#x65B9;&#x5F0F;&#x8868;&#x5355;&#x4E0A;&#x4F20;&#x9700;&#x8981;&#x643A;&#x5E26;&#x7684;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF0C;&#x6709;&#x6548;&#x65F6;&#x95F4;300&#x79D2;&#x3002;</span>
+        _storage<span class="token punctuation">.</span><span class="token function">getUploadForm</span><span class="token punctuation">(</span><span class="token string">&quot;test/1.jpg&quot;</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token string">&quot;image/jpeg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="web&#x7AEF;&#x6587;&#x4EF6;&#x76F4;&#x4F20;">web&#x7AEF;&#x6587;&#x4EF6;&#x76F4;&#x4F20;</h3>
+<ol>
+<li><p>&#x8BF7;&#x6C42;&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#xFF0C;&#x83B7;&#x53D6;POST&#x65B9;&#x5F0F;&#x8868;&#x5355;&#x4E0A;&#x4F20;&#x9700;&#x8981;&#x643A;&#x5E26;&#x7684;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x3002;</p>
+</li>
+<li><p>&#x6784;&#x5EFA;Form&#x8868;&#x5355;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>UTF-8<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>OSS Upload Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>file<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>f1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/*<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>btn_upload<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Upload<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://code.jquery.com/jquery-3.5.1.min.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            $(function(){
+            $( &quot;#btn_upload&quot; ).on( &quot;click&quot;, function(){
+                const _file = $(&apos;#f1&apos;)[0].files[0] ;
+                // &#x6839;&#x636E;&#x4E1A;&#x52A1;&#x89C4;&#x5219;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x540E;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#xFF0C;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x540D;&#x3002;
+                const _fileId = file.name;
+                const _fileType = file.type;
+                // &#x8BF7;&#x6C42;&#x540E;&#x7AEF;&#x83B7;&#x53D6;&#x6784;&#x5EFA;form&#x4E0A;&#x4F20;&#x6240;&#x9700;&#x7684;&#x6388;&#x6743;&#x53C2;&#x6570;&#x3002;
+                $.get(`/api/examples/getUploadFormData?fid=${_fileId}`, ( res ) =&gt; {
+                    console.log( &quot;res&quot; + res );
+                    let _fd = new FormData();
+                    _fd.append( &apos;OSSAccessKeyId&apos;, res.ak );
+                    _fd.append( &apos;policy&apos;, res.policy );
+                    _fd.append( &apos;signature&apos;, res.signature );
+                    _fd.append( &apos;key&apos;, res.fid );
+                    _fd.append( &apos;file&apos;, _file );
+                    _fd.append( &apos;Content-Type&apos;, _fileType );
+                    // &#x8BA9;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;200,&#x4E0D;&#x7136;&#x9ED8;&#x8BA4;&#x4F1A;&#x8FD4;&#x56DE;204
+                    _fd.append(&apos;success_action_status&apos;,&apos;200&apos;);
+                    let _xhr = new XMLHttpRequest();
+                    _xhr.open(&apos;POST&apos;, res.url, true);
+                    _xhr.send(fd);
+                    _xhr.onload = () =&gt; {
+                        console.log(&apos;status:&apos; + _xhr.status);
+                    };
+                } );
+            } );
+        });
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="plugins_dev.html" class="navigation navigation-prev " aria-label="Previous page: 插件开发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../faq/faq.html" class="navigation navigation-next " aria-label="Next page: FAQ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"oss云存储插件","level":"1.13.2","depth":2,"next":{"title":"FAQ","level":"1.14","depth":1,"path":"src/faq/faq.md","ref":"src/faq/faq.md","articles":[]},"previous":{"title":"插件开发","level":"1.13.1","depth":2,"path":"src/plugins/plugins_dev.md","ref":"src/plugins/plugins_dev.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/plugins/storage_oss.md","mtime":"2020-05-22T05:55:16.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-22T05:56:52.174Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+
+    </body>
+</html>
+

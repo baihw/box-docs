@@ -16,6 +16,7 @@
   * [阿里云短信](src/notify/dySms.md)
 * [插件](src/plugins/plugins.md)
   * [插件开发](src/plugins/plugins_dev.md) 
+  * [oss云存储插件](src/plugins/storage_oss.md) 
 * [FAQ](src/faq/faq.md)
 
 

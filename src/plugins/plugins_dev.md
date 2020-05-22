@@ -88,25 +88,41 @@ public class HelloImpl implements IHelloPlugin {
     }
 }
 ```
-3. 打包项目：`mvn clean package`。
-4. 导出项目依赖的所有第三方jar包：`mvn dependency:copy-dependencies -DincludeScope=compile`。
+3. 补充插件描述文件：“META-INF/box/hello.json”。
+
+   ```json
+   {
+     "pluginInterface": "com.wee0.box.plugins.hello.IHelloPlugin",
+     "pluginImplementation": "com.wee0.box.plugins.hello.impl.HelloImpl"
+   }
+   ```
+
+   
+
+4. 打包项目：`mvn clean package`。
+
+5. 导出项目依赖的所有第三方jar包：`mvn dependency:copy-dependencies -DoutputDirectory=target/lib   -DincludeScope=compile`。
+
+6. 将项目jar包与所有依赖的第三方jar包，打包到一个命名为“{plguinId}-{pluginVersion}”的zip文件中，如：*hello-0.1.0.zip*。
+
+7. 将zip文件发布到第三方仓库，或者自己搭建的静态文件服务器。
 
 ## 在项目中使用上边的插件实现
 
-1. 检查项目根目录下是否存在 “plugins” 目录，如果没有就新建一个。
-2. 在 “plugins” 目录下创建插件标识目录，当前版本无强制检查，可根据自己喜好建立，如："hello"。
-3. 将插件实现工程的产出jar与 *target/dependency* 目录下导出的所有第三方依赖jar包，拷贝至 “plugins/hello” 目录中。
+1. 插件本地存储目录查找规则：如果项目下存在plugins目录，使用项目下的plugins目录；否则使用操作系统中当前登陆用户的家目录下的".box/plugins"目录。
+2. 联网环境下，插件会自动下载；但是如果是无网的离线环境中，可以手动放置插件到插件本地存储目录，放置规则为：{plguinId}/{pluginVersion}/{plguinId}-{pluginVersion}.zip。
 4. 修改 ***config/box_config.properties*** 配置，启用插件。
 ```properties
 # 插件部分
-# 使用的插件标识集合，多个之间用逗号隔开
-plugin.ids=hello
-# 继承自IPlugin接口的插件主接口完全限定名称
-plugin.hello.interface=com.wee0.box.plugins.hello.IHelloPlugin
-# 插件主接口实现类完全限定名称
-plugin.hello.impl=com.wee0.box.plugins.hello.impl.HelloImpl
-# 插件自定义参数
-plugin.hello.param1=test1
-plugin.hello.param2=test2
+# 指定使用的插件管理器，默认为：SimpleHttpPluginManager。
+# com.wee0.box.plugin.IPluginManager=com.wee0.box.plugin.impl.SimpleHttpPluginManager
+# 插件仓库地址，可以修改为自己搭建的静态文件服务器。
+plugin.repository=http://repo.wee0.com/box/plugins
+# 依赖的插件集合，多个之间用逗号隔开
+# plugin.dependencies=office-poi:0.1.0,storage-oss:0.1.0
+plugin.dependencies=hello:0.1.0
+# 插件自定义参数配置，具体配置方法参考选择的插件使用说明
+plugin.hello.param1=xx
+plugin.hello.param2=xx
 ```
 5. 搞定。
