@@ -109,7 +109,7 @@ public class HelloImpl implements IHelloPlugin {
 
 ## 在项目中使用上边的插件实现
 
-1. 插件本地存储目录查找规则：如果项目下存在plugins目录，使用项目下的plugins目录；否则使用操作系统中当前登陆用户的家目录下的".box/plugins"目录。
+1. 插件本地存储目录查找规则：如果项目下存在plugins目录，使用项目下的plugins目录；否则使用用户运行启动命令时所处目录下的".box/plugins"目录。
 2. 联网环境下，插件会自动下载；但是如果是无网的离线环境中，可以手动放置插件到插件本地存储目录，放置规则为：{plguinId}/{pluginVersion}/{plguinId}-{pluginVersion}.zip。
 4. 修改 ***config/box_config.properties*** 配置，启用插件。
 ```properties
