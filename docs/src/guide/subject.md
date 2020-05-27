@@ -11,6 +11,13 @@
 shiro.ini参考配置：
 ```ini
 [main]
+# 微信登陆认证
+weiXinRealm = com.wee0.box.subject.shiro.BoxWeiXinRealm
+# appId, secret替换为自己在微信开放平台申请到的密钥对
+weiXinRealm.appId = xx
+weiXinRealm.secret = xx
+# 配置根据微信返回的用户标识查询系统用户标识的语句，接收1个参数。
+weiXinRealm.queryUser1 = select id from sys_user where wx_unionId= ?
 # jdbc认证，综合了常见的登陆需求：验证码登陆，账号密码登陆，邮箱密码登陆等场景。
 # PC浏览器访问时，默认关闭浏览器清除认证信息。
 # APP访问时，可根据需要调整令牌的有效时间，令牌到期后如果用户正在活跃状态，不会马上失效，可继续使用到超过最大空闲时间后失效。
@@ -36,6 +43,7 @@ boxJdbcRealm.queryUser2 = select id from sys_user where mobile=? and user_pwd= ?
 # boxJdbcRealm.queryUser5 = select id from sys_user where xxx=? and user_pwd= ?
 boxJdbcRealm.queryRole = select a.role_name from sys_role a join sys_user_role_rel b on a.id=b.role_id where b.user_id=?
 boxJdbcRealm.queryPermission = select a.permission_code from sys_permission a join sys_role_permission_rel b on a.id=b.permission_id join sys_user_role_rel c on c.role_id=b.role_id where c.user_id=?
+# securityManager.realms = $weiXinRealm, $boxJdbcRealm
 securityManager.realms = $boxJdbcRealm
 
 cacheManager = com.wee0.box.subject.shiro.BoxCacheManager
@@ -43,6 +51,7 @@ securityManager.cacheManager = $cacheManager
 securityManager.subjectDAO.sessionStorageEvaluator.sessionStorageEnabled = false
 ```
 
+- BoxWeiXinRealm - 通过微信登陆的认证实现
 - BoxJdbcRealm - 通过关系型数据库管理用户、角色、权限信息的认证实现
 - boxJdbcRealm.queryUser1 - 配置进行登陆认证时执行的数据库查询语句，接收2个参数：登陆标识、登陆密码，返回一个用户唯一标识。可按照此规则根据项目数据库设计来修改此语句。当前版本最多支持到queryUser5。
 - boxJdbcRealm.queryRole - 配置查询登陆用户角色名称集合的语句，接收1个参数：用户登陆成功后上边语句返回的用户唯一标识 ，返回一组角色名称集合。如：admin，guest，...。
