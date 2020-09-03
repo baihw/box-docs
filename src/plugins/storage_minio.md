@@ -1,6 +1,6 @@
-# OSS云存储插件使用说明
+# MinIo云存储插件使用说明
 
-基于阿里云OSS存储文件的云存储插件实现。
+基于MinIo存储文件的云存储插件实现。
 
 ## 使用方法
 
@@ -13,16 +13,14 @@
 # 插件仓库地址
 plugin.repository=http://repo.xxx.com/box/plugins
 # 依赖的插件集合，多个之间用逗号隔开
-plugin.dependencies=storage-oss:0.1.0
-# oss访问端点，根据自己开通的地址域名填写
-plugin.storage-oss.endpoint=oss-cn-shanghai.aliyuncs.com
-# oss访问密钥
-plugin.storage-oss.accessKey=xx
-plugin.storage-oss.secretKey=xx
+plugin.dependencies=storage-minio:0.1.0
+# MinIo访问端点，根据自己搭建的服务地址填写
+plugin.storage-minio.endpoint=http://192.168.1.240:9000/
+# MinIo访问密钥
+plugin.storage-minio.accessKey=xx
+plugin.storage-minio.secretKey=xxx
 # 默认操作的存储桶
-plugin.storage-oss.bucket=test1
-# 自定义访问域名
-plugin.storage-oss.domain=http://upload.xxx.com
+plugin.storage-minio.bucket=test1
 ```
 
 ### 常用操作
@@ -66,7 +64,7 @@ public class Test1 {
    <html>
        <head>
            <meta charset='UTF-8'>
-           <title>OSS Upload Demo</title>
+           <title>MinIo Upload Demo</title>
        </head>
    	<body>
            <div>
@@ -85,12 +83,14 @@ public class Test1 {
    				$.get(`/api/examples/getUploadFormData?fid=${_fileId}`, ( res ) => {
    					console.log( "res" + res );
    					let _fd = new FormData();
-   					_fd.append( 'OSSAccessKeyId', res.ak );
-   					_fd.append( 'policy', res.policy );
-   					_fd.append( 'signature', res.signature );
-   					_fd.append( 'key', res.fid );
+   					_fd.append( 'bucket', res.bucket );
+   					_fd.append( 'key', res.key );
+                       _fd.append( 'x-amz-algorithm', res.x-amz-algorithm );
+                       _fd.append( 'x-amz-credential', res.x-amz-credential );
+                       _fd.append( 'x-amz-date', res.x-amz-date );
+                       _fd.append( 'x-amz-signature', res.x-amz-signature );
+                       _fd.append( 'policy', res.policy );
    					_fd.append( 'file', _file );
-   					_fd.append( 'Content-Type', _fileType );
                        // 让服务端返回200,不然默认会返回204
    					_fd.append('success_action_status','200');
    					let _xhr = new XMLHttpRequest();
@@ -104,7 +104,7 @@ public class Test1 {
    		});
            </script>
        </body>
-   </html>
+</html>
    ```
-
+   
    

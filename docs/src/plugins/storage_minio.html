@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>oss云存储插件 · Box参考手册</title>
+        <title>minIo云存储插件 · Box参考手册</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="storage_minio.html" />
+    <link rel="next" href="../faq/faq.html" />
     
     
-    <link rel="prev" href="plugins_dev.html" />
+    <link rel="prev" href="storage_oss.html" />
     
 
     </head>
@@ -331,7 +331,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.13.2" data-path="storage_oss.html">
+        <li class="chapter " data-level="1.13.2" data-path="storage_oss.html">
             
                 <a href="storage_oss.html">
             
@@ -344,7 +344,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13.3" data-path="storage_minio.html">
+        <li class="chapter active" data-level="1.13.3" data-path="storage_minio.html">
             
                 <a href="storage_minio.html">
             
@@ -405,7 +405,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >oss云存储插件</a>
+        <a href="../.." >minIo云存储插件</a>
     </h1>
 </div>
 
@@ -420,8 +420,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="oss&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;">OSS&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
-<p>&#x57FA;&#x4E8E;&#x963F;&#x91CC;&#x4E91;OSS&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x5B9E;&#x73B0;&#x3002;</p>
+                                <h1 id="minio&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;">MinIo&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
+<p>&#x57FA;&#x4E8E;MinIo&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x5B9E;&#x73B0;&#x3002;</p>
 <h2 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
 <p>&#x7F16;&#x8F91; <strong><em>box_config.properties</em></strong> &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x53CA;&#x4F9D;&#x8D56;</p>
 <pre class="language-"><code class="lang-properties"><span class="token comment"># &#x63D2;&#x4EF6;&#x90E8;&#x5206;</span>
@@ -430,16 +430,14 @@
 <span class="token comment"># &#x63D2;&#x4EF6;&#x4ED3;&#x5E93;&#x5730;&#x5740;</span>
 <span class="token attr-name">plugin.repository</span><span class="token punctuation">=</span><span class="token attr-value">http://repo.xxx.com/box/plugins</span>
 <span class="token comment"># &#x4F9D;&#x8D56;&#x7684;&#x63D2;&#x4EF6;&#x96C6;&#x5408;&#xFF0C;&#x591A;&#x4E2A;&#x4E4B;&#x95F4;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;</span>
-<span class="token attr-name">plugin.dependencies</span><span class="token punctuation">=</span><span class="token attr-value">storage-oss:0.1.0</span>
-<span class="token comment"># oss&#x8BBF;&#x95EE;&#x7AEF;&#x70B9;&#xFF0C;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x5F00;&#x901A;&#x7684;&#x5730;&#x5740;&#x57DF;&#x540D;&#x586B;&#x5199;</span>
-<span class="token attr-name">plugin.storage-oss.endpoint</span><span class="token punctuation">=</span><span class="token attr-value">oss-cn-shanghai.aliyuncs.com</span>
-<span class="token comment"># oss&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;</span>
-<span class="token attr-name">plugin.storage-oss.accessKey</span><span class="token punctuation">=</span><span class="token attr-value">xx</span>
-<span class="token attr-name">plugin.storage-oss.secretKey</span><span class="token punctuation">=</span><span class="token attr-value">xx</span>
+<span class="token attr-name">plugin.dependencies</span><span class="token punctuation">=</span><span class="token attr-value">storage-minio:0.1.0</span>
+<span class="token comment"># MinIo&#x8BBF;&#x95EE;&#x7AEF;&#x70B9;&#xFF0C;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x642D;&#x5EFA;&#x7684;&#x670D;&#x52A1;&#x5730;&#x5740;&#x586B;&#x5199;</span>
+<span class="token attr-name">plugin.storage-minio.endpoint</span><span class="token punctuation">=</span><span class="token attr-value">http://192.168.1.240:9000/</span>
+<span class="token comment"># MinIo&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;</span>
+<span class="token attr-name">plugin.storage-minio.accessKey</span><span class="token punctuation">=</span><span class="token attr-value">xx</span>
+<span class="token attr-name">plugin.storage-minio.secretKey</span><span class="token punctuation">=</span><span class="token attr-value">xxx</span>
 <span class="token comment"># &#x9ED8;&#x8BA4;&#x64CD;&#x4F5C;&#x7684;&#x5B58;&#x50A8;&#x6876;</span>
-<span class="token attr-name">plugin.storage-oss.bucket</span><span class="token punctuation">=</span><span class="token attr-value">test1</span>
-<span class="token comment"># &#x81EA;&#x5B9A;&#x4E49;&#x8BBF;&#x95EE;&#x57DF;&#x540D;</span>
-<span class="token attr-name">plugin.storage-oss.domain</span><span class="token punctuation">=</span><span class="token attr-value">http://upload.xxx.com</span>
+<span class="token attr-name">plugin.storage-minio.bucket</span><span class="token punctuation">=</span><span class="token attr-value">test1</span>
 </code></pre>
 <h3 id="&#x5E38;&#x7528;&#x64CD;&#x4F5C;">&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3>
 <pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>wee0<span class="token punctuation">.</span>box<span class="token punctuation">.</span>plugin</span><span class="token punctuation">.</span><span class="token class-name">PluginManager</span><span class="token punctuation">;</span>
@@ -475,7 +473,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&apos;</span>UTF-8<span class="token punctuation">&apos;</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>OSS Upload Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>MinIo Upload Demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -494,12 +492,14 @@
                 $.get(`/api/examples/getUploadFormData?fid=${_fileId}`, ( res ) =&gt; {
                     console.log( &quot;res&quot; + res );
                     let _fd = new FormData();
-                    _fd.append( &apos;OSSAccessKeyId&apos;, res.ak );
+                    _fd.append( &apos;bucket&apos;, res.bucket );
+                    _fd.append( &apos;key&apos;, res.key );
+                    _fd.append( &apos;x-amz-algorithm&apos;, res.x-amz-algorithm );
+                    _fd.append( &apos;x-amz-credential&apos;, res.x-amz-credential );
+                    _fd.append( &apos;x-amz-date&apos;, res.x-amz-date );
+                    _fd.append( &apos;x-amz-signature&apos;, res.x-amz-signature );
                     _fd.append( &apos;policy&apos;, res.policy );
-                    _fd.append( &apos;signature&apos;, res.signature );
-                    _fd.append( &apos;key&apos;, res.fid );
                     _fd.append( &apos;file&apos;, _file );
-                    _fd.append( &apos;Content-Type&apos;, _fileType );
                     // &#x8BA9;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;200,&#x4E0D;&#x7136;&#x9ED8;&#x8BA4;&#x4F1A;&#x8FD4;&#x56DE;204
                     _fd.append(&apos;success_action_status&apos;,&apos;200&apos;);
                     let _xhr = new XMLHttpRequest();
@@ -544,12 +544,12 @@
 
             
                 
-                <a href="plugins_dev.html" class="navigation navigation-prev " aria-label="Previous page: 插件开发">
+                <a href="storage_oss.html" class="navigation navigation-prev " aria-label="Previous page: oss云存储插件">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="storage_minio.html" class="navigation navigation-next " aria-label="Next page: minIo云存储插件">
+                <a href="../faq/faq.html" class="navigation navigation-next " aria-label="Next page: FAQ">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -560,7 +560,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"oss云存储插件","level":"1.13.2","depth":2,"next":{"title":"minIo云存储插件","level":"1.13.3","depth":2,"path":"src/plugins/storage_minio.md","ref":"src/plugins/storage_minio.md","articles":[]},"previous":{"title":"插件开发","level":"1.13.1","depth":2,"path":"src/plugins/plugins_dev.md","ref":"src/plugins/plugins_dev.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/plugins/storage_oss.md","mtime":"2020-05-22T06:06:00.858Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-03T08:00:38.901Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"minIo云存储插件","level":"1.13.3","depth":2,"next":{"title":"FAQ","level":"1.14","depth":1,"path":"src/faq/faq.md","ref":"src/faq/faq.md","articles":[]},"previous":{"title":"oss云存储插件","level":"1.13.2","depth":2,"path":"src/plugins/storage_oss.md","ref":"src/plugins/storage_oss.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","chapter-fold","back-to-top-button","search-pro","-highlight","prism","-livereload","-fontsettings","-include-display-run","-tbfed-pagefooter","-ace","-include-codeblock","-mermaid","-katex","-lunr","-search","-sharing"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"splitter":{},"expandable-chapters":{},"chapter-fold":{},"back-to-top-button":{},"search-pro":{},"prism":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"baihw","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Box参考手册","language":"zh-hans","links":{"sidebar":{"box-doc":"http://doc.box.wee0.com"}},"gitbook":"*","description":"Box参考手册。"},"file":{"path":"src/plugins/storage_minio.md","mtime":"2020-09-03T07:58:04.365Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-03T08:00:38.901Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

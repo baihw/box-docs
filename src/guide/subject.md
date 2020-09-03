@@ -11,11 +11,23 @@
 shiro.ini参考配置：
 ```ini
 [main]
+# boxToken管理对象
+boxTokanManager = com.wee0.box.subject.shiro.BoxTokenManager
+# 8位token密钥。
+boxTokanManager.tokenSecret = 1234567x
+# token最大生存时间，2,592,000,000 milliseconds = 30 day
+boxTokanManager.tokenMaxLifeTime = 2592000000
+# token最大空闲时间，3,600,000 milliseconds = 1 hour
+# 当token超过最大生存时间之后，如果处于活跃状态，则可以继续使用到满足最大空闲时间之后失效。
+boxTokanManager.tokenMaxIdleTime = 3600000
+#
 # 微信登陆认证
 weiXinRealm = com.wee0.box.subject.shiro.BoxWeiXinRealm
 # appId, secret替换为自己在微信开放平台申请到的密钥对
 weiXinRealm.appId = xx
 weiXinRealm.secret = xx
+# 使用的boxToken管理器
+weiXinRealm.boxTokenManager = $boxTokanManager
 # 配置根据微信返回的用户标识查询系统用户标识的语句，接收1个参数。
 weiXinRealm.queryUser1 = select id from sys_user where wx_unionId= ?
 # jdbc认证，综合了常见的登陆需求：验证码登陆，账号密码登陆，邮箱密码登陆等场景。
@@ -28,13 +40,8 @@ boxJdbcRealm = com.wee0.box.subject.shiro.BoxJdbcRealm
 # 如果查询到缓存数据，则直接登陆成功。
 # 如果没有查询到缓存数据，则进入后边的登陆信息查询流程。
 boxJdbcRealm.queryCodePrefix = BoxQueryCode_
-# 8位token密钥。
-boxJdbcRealm.tokenSecret = 1234567x
-# token最大生存时间，2,592,000,000 milliseconds = 30 day
-boxJdbcRealm.tokenMaxLifeTime = 2592000000
-# token最大空闲时间，3,600,000 milliseconds = 1 hour
-# 当token超过最大生存时间之后，如果处于活跃状态，则可以继续使用到满足最大空闲时间之后失效。
-boxJdbcRealm.tokenMaxIdleTime = 3600000
+# 使用的boxToken管理器
+boxJdbcRealm.boxTokenManager = $boxTokanManager
 # 配置根据登陆信息查询用户标识的语句，最多支持5个，用户登陆时从第1个开始依次试之，遇到成功则终止。
 boxJdbcRealm.queryUser1 = select id from sys_user where user_name=? and user_pwd= ?
 boxJdbcRealm.queryUser2 = select id from sys_user where mobile=? and user_pwd= ?
@@ -51,6 +58,7 @@ securityManager.cacheManager = $cacheManager
 securityManager.subjectDAO.sessionStorageEvaluator.sessionStorageEnabled = false
 ```
 
+- BoxTokenManager - boxToken管理对象，通常共用一个。
 - BoxWeiXinRealm - 通过微信登陆的认证实现
 - BoxJdbcRealm - 通过关系型数据库管理用户、角色、权限信息的认证实现
 - boxJdbcRealm.queryUser1 - 配置进行登陆认证时执行的数据库查询语句，接收2个参数：登陆标识、登陆密码，返回一个用户唯一标识。可按照此规则根据项目数据库设计来修改此语句。当前版本最多支持到queryUser5。

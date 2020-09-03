@@ -17,6 +17,7 @@
 * [插件](src/plugins/plugins.md)
   * [插件开发](src/plugins/plugins_dev.md) 
   * [oss云存储插件](src/plugins/storage_oss.md) 
+  * [minIo云存储插件](src/plugins/storage_minio.md) 
 * [FAQ](src/faq/faq.md)
 
 
